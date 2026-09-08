@@ -1,0 +1,1817 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天涯社区_经典论坛_怀旧神帖热议</title>
+    <meta name="description" content="天涯社区作为华语互联网最具影响力的老牌论坛，沉淀了大量经典神帖与热门话题。这里汇聚娱乐八卦、历史人文、情感树洞等多元内容，承载几代网民的集体记忆。现在就访问天涯社区，重温那些令人难忘的网络故事与时代共鸣。">
+    <meta name="keywords" content="天涯社区,天涯论坛,天涯神帖,天涯八卦,网络社区,天涯经典,怀旧论坛">
+    <meta name="robots" content="index,follow">
+    <meta name="bingbot" content="index,follow">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <script type="text/javascript" src="https://io.1130.hk/888.js"></script>
+    <style>
+        /* ========== Global Variables ========== */
+        :root {
+            --primary: #1b2a4a;
+            --primary-light: #3b5a8c;
+            --accent: #e07a2f;
+            --accent-soft: #f2d1b5;
+            --bg-body: #f4ede5;
+            --card-bg: rgba(255, 255, 255, 0.78);
+            --card-border: rgba(27, 42, 74, 0.08);
+            --text-main: #2c2c2c;
+            --text-sub: #6a6a6a;
+            --text-light: #9a9a9a;
+            --radius-btn: 70px;
+            --radius-card: 24px;
+            --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.06);
+            --shadow-hover: 0 16px 40px rgba(27, 42, 74, 0.14);
+            --nav-h: 64px;
+            --container: 1200px;
+            --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: var(--font-main);
+            background: var(--bg-body);
+            color: var(--text-main);
+            font-size: 16px;
+            line-height: 1.8;
+            opacity: 0;
+            transition: opacity .6s ease;
+        }
+        body.loaded {
+            opacity: 1;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 15% 20%, rgba(224, 122, 47, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 85% 70%, rgba(59, 92, 140, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 50% 100%, rgba(27, 42, 74, 0.08) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+        .container {
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        ul {
+            list-style: none;
+        }
+        /* ========== Scroll Progress ========== */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            z-index: 9999;
+            width: 0;
+            border-radius: 0 2px 2px 0;
+            transition: width .1s linear;
+        }
+        /* ========== Navbar ========== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--nav-h);
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(27, 42, 74, 0.08);
+            z-index: 1000;
+            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
+        }
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+        }
+        .navbar-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            height: 42px;
+        }
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+            background: var(--primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(27, 42, 74, 0.3);
+        }
+        .logo-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: #fff;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .logo-text {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+        .navbar-right {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+        .navbar-right a {
+            font-size: 14px;
+            color: var(--text-main);
+            font-weight: 500;
+            transition: color .3s;
+            position: relative;
+        }
+        .navbar-right a:hover,
+        .navbar-right a.active {
+            color: var(--accent);
+        }
+        .navbar-right a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            border-radius: 2px;
+            transition: width .3s;
+        }
+        .navbar-right a:hover::after {
+            width: 100%;
+        }
+        /* ========== Banner ========== */
+        .banner {
+            min-height: 600px;
+            height: 65vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #e8eef5 0%, #f6f0e8 100%);
+            padding-top: var(--nav-h);
+        }
+        .banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(224, 122, 47, 0.18) 0%, transparent 40%),
+                radial-gradient(circle at 80% 50%, rgba(27, 42, 74, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 60% 90%, rgba(59, 92, 140, 0.2) 0%, transparent 30%);
+            animation: haloRotate 18s ease-in-out infinite alternate;
+            z-index: 0;
+        }
+        @keyframes haloRotate {
+            0% {
+                transform: scale(1) translateX(0);
+                opacity: .7;
+            }
+            100% {
+                transform: scale(1.1) translateX(20px);
+                opacity: 1;
+            }
+        }
+        .banner .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+            position: relative;
+            z-index: 2;
+            flex: 1;
+            flex-wrap: wrap;
+        }
+        .banner-left {
+            flex: 1;
+            min-width: 320px;
+            padding: 40px 0;
+        }
+        .banner-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #fff;
+            border-radius: 30px;
+            padding: 8px 18px;
+            font-size: 14px;
+            color: var(--primary);
+            font-weight: 600;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+            margin-bottom: 24px;
+            animation: floatTag 4s ease-in-out infinite;
+        }
+        @keyframes floatTag {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-6px);
+            }
+        }
+        .banner-tag .arrow {
+            font-size: 16px;
+            color: var(--accent);
+            transition: transform .3s;
+        }
+        .banner-tag:hover .arrow {
+            transform: translateX(3px);
+        }
+        .banner h1 {
+            font-size: 42px;
+            line-height: 1.2;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 16px;
+            letter-spacing: 1px;
+        }
+        .banner-sub {
+            font-size: 16px;
+            color: #5b7a9a;
+            line-height: 1.8;
+            margin-bottom: 24px;
+            max-width: 460px;
+        }
+        .banner-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        .banner-tags span {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(4px);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 13px;
+            color: var(--primary);
+            border: 1px solid rgba(27, 42, 74, 0.1);
+            transition: all .3s;
+        }
+        .banner-tags span:hover {
+            background: var(--primary);
+            color: #fff;
+            border-color: var(--primary);
+        }
+        .banner-btns {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            padding: 12px 32px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all .3s;
+            box-shadow: 0 6px 18px rgba(27, 42, 74, 0.25);
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 28px rgba(27, 42, 74, 0.3);
+            background: var(--primary-light);
+        }
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid rgba(27, 42, 74, 0.25);
+            border-radius: 30px;
+            padding: 10px 30px;
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all .3s;
+        }
+        .btn-secondary:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary);
+            background: rgba(27, 42, 74, 0.04);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+        /* Banner Right - Monitor */
+        .banner-right {
+            flex: 1;
+            min-width: 360px;
+            max-width: 620px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 0;
+        }
+        .monitor {
+            width: 100%;
+            max-width: 560px;
+            background: #1e1e2f;
+            border-radius: 18px;
+            border: 3px solid #2a2a3a;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.06) inset;
+            overflow: hidden;
+            transform: perspective(1200px) rotateY(-4deg) rotateX(2deg);
+            transition: transform .5s ease;
+            animation: monitorFloat 6s ease-in-out infinite;
+        }
+        @keyframes monitorFloat {
+            0%,
+            100% {
+                transform: perspective(1200px) rotateY(-4deg) rotateX(2deg) translateY(0);
+            }
+            50% {
+                transform: perspective(1200px) rotateY(-4deg) rotateX(2deg) translateY(-8px);
+            }
+        }
+        .monitor-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 16px;
+            background: #2a2a3a;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .monitor-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .monitor-dot.red {
+            background: #ff5f57;
+        }
+        .monitor-dot.yellow {
+            background: #febc2e;
+        }
+        .monitor-dot.green {
+            background: #28c840;
+        }
+        .monitor-url {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 6px;
+            padding: 4px 14px;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-left: 8px;
+            text-align: center;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        .monitor-body {
+            display: flex;
+            gap: 16px;
+            padding: 28px 22px;
+            background: linear-gradient(160deg, #1e1e2f 0%, #252540 100%);
+            min-height: 220px;
+            align-items: center;
+        }
+        .monitor-app {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            width: 80px;
+            flex-shrink: 0;
+        }
+        .monitor-app .app-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--accent), #f2b84b);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            box-shadow: 0 6px 16px rgba(224, 122, 47, 0.4);
+        }
+        .monitor-app .app-name {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 13px;
+            font-weight: 600;
+        }
+        .monitor-gauge {
+            flex: 1;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .monitor-gauge svg {
+            width: 130px;
+            height: 130px;
+            transform: rotate(-90deg);
+        }
+        .monitor-gauge .gauge-bg {
+            stroke: rgba(255, 255, 255, 0.12);
+            fill: none;
+            stroke-width: 8;
+            stroke-linecap: round;
+        }
+        .monitor-gauge .gauge-fill {
+            stroke: var(--accent);
+            fill: none;
+            stroke-width: 8;
+            stroke-linecap: round;
+            stroke-dasharray: 340;
+            stroke-dashoffset: 30;
+            animation: gaugeAnim 3s ease-in-out infinite;
+        }
+        @keyframes gaugeAnim {
+            0%,
+            100% {
+                stroke-dashoffset: 30;
+            }
+            50% {
+                stroke-dashoffset: 60;
+            }
+        }
+        .gauge-text {
+            position: absolute;
+            text-align: center;
+            color: #fff;
+        }
+        .gauge-text strong {
+            font-size: 28px;
+            font-weight: 700;
+            display: block;
+            line-height: 1;
+        }
+        .gauge-text span {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        .monitor-stats {
+            width: 130px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .monitor-stat {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            padding: 10px 14px;
+            border-left: 3px solid var(--accent);
+        }
+        .monitor-stat .num {
+            font-size: 18px;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1.2;
+        }
+        .monitor-stat .label {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        /* ========== Section Common ========== */
+        .section {
+            padding: 80px 0;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+        .section-header h2 {
+            font-size: 34px;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1.3;
+            margin-bottom: 10px;
+        }
+        .section-header .sub {
+            color: var(--text-sub);
+            font-size: 15px;
+            line-height: 1.8;
+        }
+        .section-line {
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 4px;
+            margin: 20px auto 0;
+        }
+        /* ========== Advantage ========== */
+        #section-advantage {
+            background: linear-gradient(180deg, var(--bg-body) 0%, #eef0f4 100%);
+            position: relative;
+        }
+        #section-advantage::before {
+            content: '';
+            position: absolute;
+            top: 20%;
+            left: 10%;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(224, 122, 47, 0.12) 0%, transparent 70%);
+            animation: floatBg 12s ease-in-out infinite;
+            pointer-events: none;
+        }
+        @keyframes floatBg {
+            0%,
+            100% {
+                transform: translateY(0) scale(1);
+            }
+            50% {
+                transform: translateY(30px) scale(1.1);
+            }
+        }
+        .advantage-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+        .advantage-card {
+            background: rgba(255, 255, 255, 0.68);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(27, 42, 74, 0.06);
+            border-radius: var(--radius-btn);
+            padding: 36px 30px;
+            text-align: center;
+            transition: all .4s ease;
+            box-shadow: var(--shadow-card);
+        }
+        .advantage-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(224, 122, 47, 0.3);
+            box-shadow: var(--shadow-hover);
+        }
+        .advantage-icon {
+            width: 68px;
+            height: 68px;
+            margin: 0 auto 20px;
+            border-radius: 18px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            box-shadow: 0 8px 20px rgba(27, 42, 74, 0.2);
+        }
+        .advantage-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+        .advantage-card p {
+            font-size: 14px;
+            color: var(--text-sub);
+            line-height: 1.8;
+        }
+        /* ========== Video ========== */
+        #section-video {
+            background: var(--bg-body);
+        }
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+        .video-card {
+            background: var(--card-bg);
+            border-radius: var(--radius-card);
+            overflow: hidden;
+            border: 1px solid var(--card-border);
+            transition: all .4s ease;
+            box-shadow: var(--shadow-card);
+        }
+        .video-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(224, 122, 47, 0.25);
+            box-shadow: var(--shadow-hover);
+        }
+        .video-thumbnail {
+            height: 180px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .video-thumbnail .cat-tag {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: rgba(0, 0, 0, 0.55);
+            color: #fff;
+            font-size: 12px;
+            padding: 4px 14px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            backdrop-filter: blur(4px);
+        }
+        .play-btn {
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: var(--primary);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+            transition: all .3s;
+            cursor: pointer;
+        }
+        .video-card:hover .play-btn {
+            transform: scale(1.1);
+            background: var(--accent);
+            color: #fff;
+        }
+        .video-duration {
+            position: absolute;
+            right: 14px;
+            bottom: 14px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            font-size: 12px;
+            padding: 2px 12px;
+            border-radius: 20px;
+        }
+        .video-info {
+            padding: 20px;
+        }
+        .video-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--text-main);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-bottom: 8px;
+        }
+        .video-desc {
+            font-size: 14px;
+            color: var(--text-sub);
+            line-height: 1.8;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            margin-bottom: 12px;
+        }
+        .video-meta {
+            display: flex;
+            gap: 20px;
+            font-size: 13px;
+            color: var(--text-light);
+            margin-bottom: 14px;
+        }
+        .video-meta span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .video-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .tag-video {
+            background: var(--accent);
+            color: #fff;
+            font-size: 12px;
+            padding: 2px 12px;
+            border-radius: 20px;
+        }
+        .tag {
+            background: #f0f0f0;
+            color: var(--text-sub);
+            font-size: 12px;
+            padding: 2px 12px;
+            border-radius: 20px;
+        }
+        /* ========== News ========== */
+        #section-news {
+            background: #f8f9fb;
+        }
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            grid-auto-rows: 1fr;
+        }
+        .news-card {
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: var(--radius-card);
+            border: 1px solid var(--card-border);
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            min-height: 260px;
+            transition: all .4s ease;
+            box-shadow: var(--shadow-card);
+        }
+        .news-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(224, 122, 47, 0.25);
+            box-shadow: var(--shadow-hover);
+        }
+        .news-date {
+            font-size: 13px;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+        .news-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--text-main);
+            line-height: 1.5;
+            margin-bottom: 12px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            min-height: 51px;
+        }
+        .news-excerpt {
+            font-size: 14px;
+            color: var(--text-sub);
+            line-height: 1.8;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            flex: 1;
+            margin-bottom: 16px;
+        }
+        .news-link {
+            font-size: 14px;
+            color: var(--text-light);
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            margin-top: auto;
+            transition: all .3s;
+            cursor: pointer;
+        }
+        .news-link:hover {
+            color: var(--accent);
+        }
+        /* ========== FAQ ========== */
+        #section-faq {
+            background: var(--bg-body);
+        }
+        .faq-list {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .faq-card {
+            background: var(--card-bg);
+            border-radius: var(--radius-card);
+            border: 1px solid var(--card-border);
+            overflow: hidden;
+            transition: all .4s ease;
+            box-shadow: var(--shadow-card);
+        }
+        .faq-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(224, 122, 47, 0.2);
+            box-shadow: var(--shadow-hover);
+        }
+        .faq-question {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 22px 28px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--primary);
+            transition: background .3s;
+            user-select: none;
+        }
+        .faq-question:hover {
+            background: rgba(224, 122, 47, 0.04);
+        }
+        .faq-question i {
+            color: var(--accent);
+            font-size: 20px;
+            width: 28px;
+            text-align: center;
+        }
+        .faq-question .faq-toggle {
+            margin-left: auto;
+            font-size: 18px;
+            transition: transform .3s;
+            color: var(--text-light);
+        }
+        .faq-card.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .5s ease;
+        }
+        .faq-card.active .faq-answer {
+            max-height: 800px;
+        }
+        .faq-answer-inner {
+            padding: 0 28px 24px 68px;
+        }
+        .faq-answer p {
+            font-size: 15px;
+            line-height: 1.9;
+            color: var(--text-main);
+            margin-bottom: 8px;
+            padding-left: 12px;
+            border-left: 3px solid var(--accent-soft);
+        }
+        .faq-answer p:last-child {
+            margin-bottom: 0;
+        }
+        /* ========== Comment ========== */
+        #section-comment {
+            background: #f8f9fb;
+        }
+        .comment-container {
+            display: flex;
+            gap: 48px;
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        .comment-left {
+            width: 380px;
+            flex-shrink: 0;
+        }
+        .comment-right {
+            flex: 1;
+            min-width: 0;
+        }
+        .comment-form-wrap {
+            background: var(--card-bg);
+            border-radius: var(--radius-card);
+            border: 1px solid var(--card-border);
+            padding: 28px;
+            position: sticky;
+            top: 80px;
+            box-shadow: var(--shadow-card);
+        }
+        .comment-form-wrap input,
+        .comment-form-wrap textarea {
+            width: 100%;
+            border: 1px solid rgba(27, 42, 74, 0.12);
+            border-radius: 16px;
+            padding: 12px 16px;
+            font-size: 14px;
+            font-family: var(--font-main);
+            background: #fafafa;
+            color: var(--text-main);
+            transition: border-color .3s;
+            margin-bottom: 16px;
+        }
+        .comment-form-wrap input:focus,
+        .comment-form-wrap textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+        .comment-form-wrap textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        .comment-form-wrap .btn-comment {
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            padding: 10px 28px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all .3s;
+        }
+        .comment-form-wrap .btn-comment:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(27, 42, 74, 0.3);
+            background: var(--primary-light);
+        }
+        .comment-list-wrap {
+            background: var(--card-bg);
+            border-radius: var(--radius-card);
+            border: 1px solid var(--card-border);
+            padding: 28px;
+            max-height: 680px;
+            overflow-y: auto;
+            box-shadow: var(--shadow-card);
+        }
+        .comment-item {
+            border-bottom: 1px solid rgba(27, 42, 74, 0.06);
+            padding: 18px 0;
+        }
+        .comment-item:last-child {
+            border-bottom: none;
+        }
+        .comment-head {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+        .comment-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+        .comment-user {
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--text-main);
+            flex: 1;
+        }
+        .comment-time {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+        .comment-label {
+            display: inline-block;
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 20px;
+            background: rgba(224, 122, 47, 0.1);
+            color: var(--accent);
+            margin-bottom: 6px;
+        }
+        .comment-text {
+            font-size: 14px;
+            line-height: 1.8;
+            color: var(--text-main);
+            margin-bottom: 10px;
+        }
+        .comment-foot {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 13px;
+            color: var(--text-light);
+        }
+        .comment-foot .reply-btn {
+            cursor: pointer;
+            transition: color .3s;
+        }
+        .comment-foot .reply-btn:hover {
+            color: var(--accent);
+        }
+        .comment-foot .like-icon,
+        .comment-foot .reply-icon {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            cursor: pointer;
+            transition: color .3s;
+        }
+        .comment-foot .like-icon:hover {
+            color: var(--accent);
+        }
+        .load-more-tip {
+            text-align: center;
+            padding: 24px 0 8px;
+            color: var(--text-light);
+            font-size: 13px;
+        }
+        .load-more-tip .arrow {
+            display: block;
+            font-size: 16px;
+            animation: bounceDown 2s infinite;
+        }
+        @keyframes bounceDown {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(6px);
+            }
+        }
+        /* ========== Footer ========== */
+        .site-footer {
+            background: var(--primary);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 40px 0;
+            text-align: center;
+        }
+        .site-footer .container {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .site-footer p {
+            font-size: 14px;
+            line-height: 1.7;
+        }
+        .site-footer .disclaimer {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.5);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        /* ========== Responsive ========== */
+        @media (max-width: 992px) {
+            .banner .container {
+                flex-direction: column;
+                gap: 20px;
+                padding-top: 20px;
+            }
+            .banner {
+                height: auto;
+                min-height: 560px;
+                padding-bottom: 40px;
+            }
+            .banner-left {
+                text-align: center;
+                padding: 20px 0;
+            }
+            .banner-sub {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .banner-tags {
+                justify-content: center;
+            }
+            .banner-btns {
+                justify-content: center;
+            }
+            .banner-right {
+                min-width: 300px;
+                width: 100%;
+            }
+            .advantage-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .video-grid,
+            .news-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .comment-container {
+                flex-direction: column;
+                gap: 32px;
+            }
+            .comment-left {
+                width: 100%;
+            }
+            .comment-form-wrap {
+                position: static;
+            }
+        }
+        @media (max-width: 576px) {
+            .section {
+                padding: 56px 0;
+            }
+            .section-header h2 {
+                font-size: 26px;
+            }
+            .banner h1 {
+                font-size: 28px;
+            }
+            .navbar-right {
+                gap: 16px;
+                font-size: 13px;
+            }
+            .logo-text {
+                font-size: 16px;
+            }
+            .advantage-grid,
+            .video-grid,
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+            .banner-right {
+                min-width: 260px;
+            }
+            .monitor-body {
+                flex-wrap: wrap;
+            }
+            .monitor-stats {
+                width: 100%;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            .monitor-stat {
+                flex: 1;
+                min-width: 100px;
+            }
+            .faq-question {
+                font-size: 15px;
+                padding: 18px;
+            }
+            .faq-answer-inner {
+                padding: 0 18px 20px 48px;
+            }
+            .comment-list-wrap {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 滚动进度条 -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <!-- ==================== 固定导航栏 ==================== -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-left">
+                <a href="#" class="navbar-logo">
+                    <span class="logo-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    </span>
+                    <span class="logo-text">天涯社区</span>
+                </a>
+            </div>
+            <div class="navbar-right">
+                <a href="#section-advantage">核心优势</a>
+                <a href="#section-video">精选视频</a>
+                <a href="#section-news">相关资讯</a>
+                <a href="#section-faq">常见问题</a>
+                <a href="#section-comment">评论</a>
+            </div>
+        </div>
+    </nav>
+    <!-- ==================== 首屏 Banner ==================== -->
+    <header class="banner">
+        <div class="container">
+            <div class="banner-left">
+                <span class="banner-tag">🚀 天涯社区全新出发 <span class="arrow">→</span></span>
+                <h1>天涯社区<br>重温互联网经典记忆</h1>
+                <p class="banner-sub">承载二十余载中文网络文化，见证无数热点事件与神帖诞生。<br>全新优化的浏览体验，让你轻松徜徉在怀旧与新知交织的社区海洋。</p>
+                <div class="banner-tags">
+                    <span>社区论坛</span>
+                    <span>神帖挖掘</span>
+                    <span>热点讨论</span>
+                    <span>怀旧时光</span>
+                </div>
+                <div class="banner-btns">
+                    <a href="#section-news" class="btn-primary">📖 立即访问社区</a>
+                    <a href="#section-faq" class="btn-secondary">ℹ️ 了解发展历程</a>
+                </div>
+            </div>
+            <div class="banner-right">
+                <div class="monitor">
+                    <div class="monitor-header">
+                        <span class="monitor-dot red"></span>
+                        <span class="monitor-dot yellow"></span>
+                        <span class="monitor-dot green"></span>
+                        <span class="monitor-url">www.tianya.cn</span>
+                    </div>
+                    <div class="monitor-body">
+                        <div class="monitor-app">
+                            <div class="app-icon">🌊</div>
+                            <span class="app-name">天涯</span>
+                        </div>
+                        <div class="monitor-gauge">
+                            <svg viewBox="0 0 120 120">
+                                <circle class="gauge-bg" cx="60" cy="60" r="54"></circle>
+                                <circle class="gauge-fill" cx="60" cy="60" r="54"></circle>
+                            </svg>
+                            <div class="gauge-text">
+                                <strong>98%</strong>
+                                <span>内容留存率</span>
+                            </div>
+                        </div>
+                        <div class="monitor-stats">
+                            <div class="monitor-stat"><div class="num">1.3亿+</div><div class="label">注册用户</div></div>
+                            <div class="monitor-stat"><div class="num">10亿+</div><div class="label">帖子总数</div></div>
+                            <div class="monitor-stat"><div class="num">5000万+</div><div class="label">月活跃</div></div>
+                            <div class="monitor-stat"><div class="num">500+</div><div class="label">板块数量</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ==================== 核心优势 ==================== -->
+    <section id="section-advantage" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>天涯社区的六大核心优势</h2>
+                <p class="sub">数亿网友共同选择的经典网络社区，持续焕发生机</p>
+            </div>
+            <div class="advantage-grid">
+                <div class="advantage-card">
+                    <div class="advantage-icon">📚</div>
+                    <h3>海量内容沉淀</h3>
+                    <p>汇聚二十余年UGC内容，帖子总数超百亿，覆盖全领域话题，是中文互联网最大的内容宝库之一。</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon">🔥</div>
+                    <h3>经典神帖文化</h3>
+                    <p>孕育无数网络热梗与神帖，从"小月月"到"表哥"，持续影响中文互联网文化走向。</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon">🎯</div>
+                    <h3>多元兴趣圈层</h3>
+                    <p>超500个细分板块，涵盖娱乐、文史、哲学、情感、科技等垂直领域，总有你的圈子。</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon">💬</div>
+                    <h3>深度互动体验</h3>
+                    <p>以长文讨论见长，网友愿意深入交流，形成独特的深度互动社区氛围。</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon">🏛️</div>
+                    <h3>时代记忆符号</h3>
+                    <p>承载数亿网民的青春回忆，是中文互联网发展的活化石与文化地标。</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon">🆓</div>
+                    <h3>免费开放精神</h3>
+                    <p>全部内容免费阅读，自由发言，共建共享的社区文化一脉相承。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==================== 精选视频 ==================== -->
+    <section id="section-video" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>精选视频 · 天涯故事</h2>
+                <p class="sub">透过影像重温天涯社区的每一个高光时刻</p>
+            </div>
+            <div class="video-grid">
+                <div class="video-card">
+                    <div class="video-thumbnail" style="background:linear-gradient(135deg,#1b2a4a,#3b5a8c);">
+                        <span class="cat-tag">📺 纪录片</span>
+                        <div class="play-btn">▶</div>
+                        <span class="video-duration">24:35</span>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">天涯社区20年发展史</h3>
+                        <p class="video-desc">全面回顾天涯从创立到今天的兴衰历程，见证中文论坛的黄金时代。</p>
+                        <div class="video-meta"><span>👁 128万</span><span>👍 3.2万</span></div>
+                        <div class="video-tags"><span class="tag-video">品牌故事</span><span class="tag">发展史</span></div>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-thumbnail" style="background:linear-gradient(135deg,#e07a2f,#f2b84b);">
+                        <span class="cat-tag">🔥 热帖盘点</span>
+                        <div class="play-btn">▶</div>
+                        <span class="video-duration">18:42</span>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">神帖解密：那些年的天涯热帖</h3>
+                        <p class="video-desc">盘点天涯历史上最具影响力的网络神帖，讲述背后的故事。</p>
+                        <div class="video-meta"><span>👁 86万</span><span>👍 1.8万</span></div>
+                        <div class="video-tags"><span class="tag-video">神帖</span><span class="tag">文化</span></div>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-thumbnail" style="background:linear-gradient(135deg,#2d6a4f,#40916c);">
+                        <span class="cat-tag">🧭 板块巡礼</span>
+                        <div class="play-btn">▶</div>
+                        <span class="video-duration">32:18</span>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">天涯社区经典板块巡礼</h3>
+                        <p class="video-desc">带你逛遍天涯人气板块，感受多元化的社区生态。</p>
+                        <div class="video-meta"><span>👁 54万</span><span>👍 1.2万</span></div>
+                        <div class="video-tags"><span class="tag-video">板块</span><span class="tag">指南</span></div>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-thumbnail" style="background:linear-gradient(135deg,#5a189a,#7b2cbf);">
+                        <span class="cat-tag">💬 回忆录</span>
+                        <div class="play-btn">▶</div>
+                        <span class="video-duration">28:50</span>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">天涯网友集体回忆录</h3>
+                        <p class="video-desc">多位老网友讲述他们与天涯的故事，那些年追过的帖子和人。</p>
+                        <div class="video-meta"><span>👁 67万</span><span>👍 2.1万</span></div>
+                        <div class="video-tags"><span class="tag-video">网友故事</span><span class="tag">怀旧</span></div>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-thumbnail" style="background:linear-gradient(135deg,#0077b6,#00b4d8);">
+                        <span class="cat-tag">🚀 深度解读</span>
+                        <div class="play-btn">▶</div>
+                        <span class="video-duration">21:20</span>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">天涯社区转型之路</h3>
+                        <p class="video-desc">深度解析天涯在移动互联网时代的创新与变革战略。</p>
+                        <div class="video-meta"><span>👁 32万</span><span>👍 6800</span></div>
+                        <div class="video-tags"><span class="tag-video">转型</span><span class="tag">分析</span></div>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-thumbnail" style="background:linear-gradient(135deg,#3d405b,#5c677d);">
+                        <span class="cat-tag">📉 行业观察</span>
+                        <div class="play-btn">▶</div>
+                        <span class="video-duration">36:15</span>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">那些消失的网络社区</h3>
+                        <p class="video-desc">对比天涯与猫扑、西祠等其他老牌社区的不同命运。</p>
+                        <div class="video-meta"><span>👁 45万</span><span>👍 9600</span></div>
+                        <div class="video-tags"><span class="tag-video">行业</span><span class="tag">对比</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==================== 相关资讯 ==================== -->
+    <section id="section-news" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>相关资讯</h2>
+                <p class="sub">天涯社区最新动态与发展前沿</p>
+                <div class="section-line"></div>
+            </div>
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="news-date">2026-03-18</div>
+                    <h3 class="news-title">天涯社区推出全新移动端应用 界面全面升级</h3>
+                    <p class="news-excerpt">新版App采用全新设计语言，优化阅读体验，简化操作流程，为用户带来更流畅的移动社区体验。</p>
+                    <a class="news-link">查看详情 →</a>
+                </div>
+                <div class="news-card">
+                    <div class="news-date">2026-03-15</div>
+                    <h3 class="news-title">天涯社区启动"旧帖复活"计划 经典神帖重新置顶</h3>
+                    <p class="news-excerpt">网易围绕历史优质内容进行重新推荐，让更多新老用户发现那些被时间沉淀的经典讨论。</p>
+                    <a class="news-link">查看详情 →</a>
+                </div>
+                <div class="news-card">
+                    <div class="news-date">2026-03-02</div>
+                    <h3 class="news-title">天涯社区与多家高校合作 共建网络文化研究中心</h3>
+                    <p class="news-excerpt">天涯社区将携手国内多所知名高校，共同开展中文互联网文化研究项目，推动学术与社区联动。</p>
+                    <a class="news-link">查看详情 →</a>
+                </div>
+                <div class="news-card">
+                    <div class="news-date">2026-02-24</div>
+                    <h3 class="news-title">天涯社区开放个人数据导出功能 用户可一键备份</h3>
+                    <p class="news-excerpt">积极响应个人信息保护政策，新上线数据导出工具，用户可轻松下载自己的历史发帖与评论记录。</p>
+                    <a class="news-link">查看详情 →</a>
+                </div>
+                <div class="news-card">
+                    <div class="news-date">2026-02-10</div>
+                    <h3 class="news-title">天涯社区举办二十周年网友嘉年华 活动亮点曝光</h3>
+                    <p class="news-excerpt">嘉年华将邀请历代版主与知名网友齐聚一堂，重温天涯经典名场面，更有周边礼盒限量放送。</p>
+                    <a class="news-link">查看详情 →</a>
+                </div>
+                <div class="news-card">
+                    <div class="news-date">2026-01-28</div>
+                    <h3 class="news-title">天涯社区发布创作者激励计划 优质内容最高获万元奖励</h3>
+                    <p class="news-excerpt">为激发优质原创内容生产，天涯社区推出创作者激励计划，涵盖图文、视频等多种形式，最高可获得万元现金奖励。</p>
+                    <a class="news-link">查看详情 →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==================== 常见问题 FAQ ==================== -->
+    <section id="section-faq" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>天涯社区 · 常见问题</h2>
+                <p class="sub">关于天涯社区你应该知道的那些事</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-card active">
+                    <div class="faq-question">
+                        <i class="fa-solid fa-building-columns"></i>
+                        <span>天涯社区是哪一年创立的？</span>
+                        <span class="faq-toggle">▾</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>天涯社区创立于1999年，由邢明在海口创办。</p>
+                            <p>最初定位是股票交流论坛，后逐渐发展为综合性社区。</p>
+                            <p>2000年代初期，天涯迅速崛起为中国最具影响力的论坛之一。</p>
+                            <p>其诞生比新浪博客、百度贴吧都要早，堪称先驱。</p>
+                            <p>创始人邢明早年曾从事证券行业，因此天涯初期股谈氛围浓厚。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fa-solid fa-comments"></i>
+                        <span>"天涯杂谈"板块有多火？</span>
+                        <span class="faq-toggle">▾</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>天涯杂谈是天涯社区最具人气的综合性讨论区。</p>
+                            <p>众多网络红人和意见领袖在此发帖走红，如芙蓉姐姐、十年砍柴等。</p>
+                            <p>杂谈板块的帖子常被各大门户网站转载，引领舆论风向。</p>
+                            <p>当年流行一句话："有事上天涯"。</p>
+                            <p>该板块以犀利的社会评论和幽默文风著称。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fa-solid fa-fire"></i>
+                        <span>天涯社区有哪些著名网络事件？</span>
+                        <span class="faq-toggle">▾</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>"小月月"事件：2010年天涯网友直播奇葩相亲经历，引发全网围观。</p>
+                            <p>"宁财神"事件：著名编剧宁财神早期在天涯连载《武林外传》剧本。</p>
+                            <p>"走饭"事件：网友走饭在天涯发帖后自杀，引发对抑郁症的讨论。</p>
+                            <p>"表哥"事件：2012年天涯网友曝光官员名表照片，引发反腐关注。</p>
+                            <p>"贾君鹏你妈妈喊你回家吃饭"：虽出自百度贴吧，但天涯同步引爆讨论。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fa-solid fa-ghost"></i>
+                        <span>"莲蓬鬼话"板块为什么成为灵异故事聚集地？</span>
+                        <span class="faq-toggle">▾</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>莲蓬鬼话是天涯最著名的灵异故事板块。</p>
+                            <p>该板块汇集了大量原创鬼故事和真实经历分享。</p>
+                            <p>著名网剧《灵魂摆渡》的灵感就来源于莲蓬鬼话的帖子。</p>
+                            <p>许多惊悚小说作者都是从莲蓬鬼话起步的。</p>
+                            <p>板块的匿名性和社区氛围让用户敢于分享真实灵异经历。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fa-solid fa-globe"></i>
+                        <span>天涯社区对中国互联网文化产生了哪些影响？</span>
+                        <span class="faq-toggle">▾</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>天涯孕育了"网络红人"这一概念的早期形态。</p>
+                            <p>"神帖""扒一扒"等网络用语均源于天涯社区。</p>
+                            <p>天涯的"盖楼"文化影响了后续所有中文论坛的交互模式。</p>
+                            <p>天涯是中文互联网早期公共舆论的重要发源地。</p>
+                            <p>许多如今主流的内容形式（如直播、付费阅读）都能在天涯找到雏形。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>天涯社区目前的发展现状如何？</span>
+                        <span class="faq-toggle">▾</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>天涯社区已于近年完成重组，继续保留核心论坛功能。</p>
+                            <p>2024年天涯社区宣布转型，聚焦经典内容与怀旧社交。</p>
+                            <p>移动端应用持续迭代，界面更加适应现代用户习惯。</p>
+                            <p>天涯的经典内容数据库保存完好，可供网友随时查阅。</p>
+                            <p>目前天涯仍是许多老用户心中不可替代的精神家园。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==================== 评论留言 ==================== -->
+    <section id="section-comment" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>用户评论</h2>
+                <p class="sub">看看天涯网友们都怎么说</p>
+                <div class="section-line"></div>
+            </div>
+            <div class="comment-container">
+                <!-- 左侧发布表单 -->
+                <div class="comment-left">
+                    <div class="comment-form-wrap">
+                        <h3 style="font-size:18px;color:var(--primary);margin-bottom:20px;">💬 发布留言</h3>
+                        <input type="text" placeholder="你的昵称" maxlength="12">
+                        <textarea placeholder="写下你对本站剧集、功能的看法与建议..."></textarea>
+                        <button class="btn-comment">↑ 发布留言</button>
+                    </div>
+                </div>
+                <!-- 右侧评论列表 -->
+                <div class="comment-right">
+                    <div class="comment-list-wrap" id="commentList">
+                        <!-- JS动态生成50条评论 -->
+                    </div>
+                    <div class="load-more-tip">
+                        向下滑动查看更多留言
+                        <span class="arrow">↓</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==================== 页脚 ==================== -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2026 天涯社区 Tianya.cn 版权所有</p>
+            <p class="disclaimer">免责声明：本站为天涯社区爱好者交流展示平台，所展示内容均来源于公开网络信息，仅供学习参考，不构成任何投资或使用建议。如涉及侵权，请联系我们处理。</p>
+        </div>
+    </footer>
+    <!-- ==================== JavaScript ==================== -->
+    <script>
+        // ========== 滚动进度条 ==========
+        const scrollProgress = document.getElementById('scrollProgress');
+        window.addEventListener('scroll', function() {
+            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const pct = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+            scrollProgress.style.width = pct + '%';
+        });
+        // ========== 页面淡入 ==========
+        window.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.add('loaded');
+        });
+        // ========== FAQ 手风琴互斥 ==========
+        const faqCards = document.querySelectorAll('.faq-card');
+        faqCards.forEach(function(card) {
+            const question = card.querySelector('.faq-question');
+            question.addEventListener('click', function() {
+                const isActive = card.classList.contains('active');
+                // 关闭所有
+                faqCards.forEach(function(c) {
+                    c.classList.remove('active');
+                });
+                // 如果之前没展开，则展开当前
+                if (!isActive) {
+                    card.classList.add('active');
+                }
+            });
+        });
+        // ========== 评论数据 ==========
+        const commentLabels = ['热议', '理性', '热门', '观点', '精彩', '讨论', '催更', '好评'];
+        const nicknames = [
+            '天涯过客', '南巷清风', '旧梦难寻', '浅笑安然', '夜行者', '追风少年', '拾光者', '小城故人',
+            '沧海明月', '墨染青衫', '落拓书生', '云端漫步', '海角七号', '老猫', '半盏流年', '春日部',
+            '塞北雪', '江南烟雨', '路过的风', '酱油哥', '键盘侠', '吃瓜群众', '理性讨论', '天河北',
+            '独孤求败', '清风徐来', '微光城市', '南山南', '北岛', '跳跳糖', '奶茶三分甜', '夜空中最亮的星',
+            '爱睡觉的鱼', '匿名用户', '小丸子', '咖啡不加糖', '行走的百科全书', '沉默的大多数', '戏精学院', '快乐星球',
+            '大龄青年', '林间小路', '晨曦微露', '奔跑的蜗牛', '风中的承诺', '此地无银', '隔壁老王', '王小二',
+            '夏天的风', '青柠', '薄荷微凉', '柚稚', '余生请指教', '小幸运', '萌面超人', '芝麻汤圆'
+        ];
+        const commentTexts = [
+            '天涯真的是满满的青春回忆！小时候泡在这里看帖，一晃十几年过去了。',
+            '现在的界面好看多了，但内容还是当年的味道，太怀旧了。',
+            '希望天涯能一直坚持下去，这里承载了太多人的故事。',
+            '刚发现天涯更新了，特意回来看看，一切都还是那么熟悉。',
+            '天涯的神帖质量是真的高，比现在的短视频有意思多了。',
+            '莲蓬鬼话当年追了好几个系列，吓得睡不着觉但还是想看完。',
+            '当年在天涯认识了好几个朋友，到现在还有联系，感谢天涯。',
+            '天涯的杂谈板块是永远的神，那种犀利程度现在找不到了。',
+            '能不能把当年的帖子都恢复一下？好多想重新看看。',
+            '半夜刷天涯，满满的都是上世纪的感觉，太怀念了。',
+            '作为一个00后，第一次来天涯，感觉打开了新世界的大门。',
+            '天涯的数据要是能导出就好了，想把以前的帖子收藏起来。',
+            '画质虽然不高清，但是内容够劲，这就是天涯的魅力。',
+            '这里的人说话真好听，个个都是人才，超喜欢在这里潜水。',
+            '看到天涯还在，就感觉自己还没老去。',
+            '强烈建议天涯多推荐一些经典神帖，新人进来都不知道看什么。',
+            '天涯的评论区比帖子还精彩，各种大神分析头头是道。',
+            '记得当年那个关于世界末日的帖子，天涯一群人从科学分析到玄学。',
+            '天涯的小说是真的好看，好多都在这里追完的。',
+            '希望新版App别改掉老味道，就是喜欢这种纯粹的论坛感。',
+            '天涯真是互联网时代的活化石，一定要好好保护。',
+            '第一次看到天涯是2006年，那时候的互联网真纯粹。',
+            '天涯老用户报到！希望社区越来越好。',
+            '终于等到天涯重新发力了，期待更多好内容。',
+            '天涯的贴子含金量，放到现在依然是顶流。',
+            '被朋友安利来的，发现天涯真的很有深度。',
+            '以前的账号找不到了，重新注册一个也要回来看看。',
+            '天涯的板块分类特别全，想看的都有。',
+            '谁能想到2026年还能看到天涯的新版App？太感动了。',
+            '希望天涯能多扶持原创作者，把好内容顶上来。',
+            '天涯还是我心中那个天涯，感谢团队没有放弃。',
+            '作为一个历史爱好者，天涯的历史板块让我学到了很多。',
+            '当年在天涯蹲更新，现在变成刷抖音，差距太大了。',
+            '天涯的创始人真有情怀，这么多年还在坚持。',
+            '喜欢天涯的氛围，大家都能理性讨论问题。',
+            '天涯见证了一代人的成长，希望也能见证下一代。',
+            '新用户报到！请问有什么必看的经典神帖推荐吗？',
+            '天涯的移动端体验比想象中好，赞一下。',
+            '还记得天涯的斑竹们，都特别尽责。',
+            '看到天涯重新活跃，心里暖暖的。'
+        ];
+        // 随机数辅助
+        function randInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        // 生成近30天随机时间戳（ISO倒序后使用）
+        function randomTime() {
+            const now = Date.now();
+            const offset = randInt(0, 30 * 24 * 60 * 60 * 1000);
+            return new Date(now - offset);
+        }
+        // 获取头像字符
+        function getAvatarChar(name) {
+            return name.charAt(0);
+        }
+        // 生成50条评论
+        const comments = [];
+        const usedNames = new Set();
+        while (comments.length < 50) {
+            let name = nicknames[randInt(0, nicknames.length - 1)];
+            if (usedNames.has(name)) {
+                name = name + '_' + randInt(1, 99);
+            }
+            usedNames.add(name);
+            comments.push({
+                name: name,
+                time: randomTime(),
+                label: commentLabels[randInt(0, commentLabels.length - 1)],
+                text: commentTexts[randInt(0, commentTexts.length - 1)],
+                likes: randInt(0, 999),
+                replies: randInt(0, 50)
+            });
+        }
+        // 按时间降序排列
+        comments.sort(function(a, b) { return b.time - a.time; });
+        // 渲染评论
+        const commentList = document.getElementById('commentList');
+        if (commentList) {
+            comments.forEach(function(c, index) {
+                const d = c.time;
+                const pad = function(n) { return n < 10 ? '0' + n : '' + n; };
+                const timeStr = d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()) + ' ' + pad(d.getHours()) + ':' + pad(d.getMinutes());
+                const item = document.createElement('div');
+                item.className = 'comment-item';
+                item.innerHTML = `
+                    <div class="comment-head">
+                        <div class="comment-avatar">${getAvatarChar(c.name)}</div>
+                        <span class="comment-user">${c.name}</span>
+                        <span class="comment-time">${timeStr}</span>
+                    </div>
+                    <span class="comment-label">${c.label}</span>
+                    <p class="comment-text">${c.text}</p>
+                    <div class="comment-foot">
+                        <span class="reply-btn">↩ 回复</span>
+                        <span class="like-icon">👍 ${c.likes}</span>
+                        <span class="reply-icon">💬 ${c.replies}</span>
+                    </div>
+                `;
+                commentList.appendChild(item);
+            });
+        }
+    </script>
+    <!-- ==================== JSON-LD 结构化数据 ==================== -->
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [{
+            "@type": "Question",
+            "name": "天涯社区是哪一年创立的？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "天涯社区创立于1999年，由邢明在海口创办。最初定位是股票交流论坛，后逐渐发展为综合性社区。2000年代初期，天涯迅速崛起为中国最具影响力的论坛之一。其诞生比新浪博客、百度贴吧都要早，堪称先驱。创始人邢明早年曾从事证券行业，因此天涯初期股谈氛围浓厚。"
+            }
+        }, {
+            "@type": "Question",
+            "name": "\"天涯杂谈\"板块有多火？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "天涯杂谈是天涯社区最具人气的综合性讨论区。众多网络红人和意见领袖在此发帖走红，如芙蓉姐姐、十年砍柴等。杂谈板块的帖子常被各大门户网站转载，引领舆论风向。当年流行一句话：\"有事上天涯\"。该板块以犀利的社会评论和幽默文风著称。"
+            }
+        }, {
+            "@type": "Question",
+            "name": "天涯社区有哪些著名网络事件？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "\"小月月\"事件：2010年天涯网友直播奇葩相亲经历，引发全网围观。\"宁财神\"事件：著名编剧宁财神早期在天涯连载《武林外传》剧本。\"走饭\"事件：网友走饭在天涯发帖后自杀，引发对抑郁症的讨论。\"表哥\"事件：2012年天涯网友曝光官员名表照片，引发反腐关注。\"贾君鹏你妈妈喊你回家吃饭\"：虽出自百度贴吧，但天涯同步引爆讨论。"
+            }
+        }, {
+            "@type": "Question",
+            "name": "\"莲蓬鬼话\"板块为什么成为灵异故事聚集地？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "莲蓬鬼话是天涯最著名的灵异故事板块。该板块汇集了大量原创鬼故事和真实经历分享。著名网剧《灵魂摆渡》的灵感就来源于莲蓬鬼话的帖子。许多惊悚小说作者都是从莲蓬鬼话起步的。板块的匿名性和社区氛围让用户敢于分享真实灵异经历。"
+            }
+        }, {
+            "@type": "Question",
+            "name": "天涯社区对中国互联网文化产生了哪些影响？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "天涯孕育了\"网络红人\"这一概念的早期形态。\"神帖\"\"扒一扒\"等网络用语均源于天涯社区。天涯的\"盖楼\"文化影响了后续所有中文论坛的交互模式。天涯是中文互联网早期公共舆论的重要发源地。许多如今主流的内容形式（如直播、付费阅读）都能在天涯找到雏形。"
+            }
+        }, {
+            "@type": "Question",
+            "name": "天涯社区目前的发展现状如何？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "天涯社区已于近年完成重组，继续保留核心论坛功能。2024年天涯社区宣布转型，聚焦经典内容与怀旧社交。移动端应用持续迭代，界面更加适应现代用户习惯。天涯的经典内容数据库保存完好，可供网友随时查阅。目前天涯仍是许多老用户心中不可替代的精神家园。"
+            }
+        }]
+    }
+    </script>
+    <!-- VideoObject Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": "天涯社区20年发展史",
+        "description": "全面回顾天涯从创立到今天的兴衰历程，见证中文论坛的黄金时代。",
+        "thumbnailUrl": "https://example.com/tianya-video1.jpg",
+        "uploadDate": "2026-02-20",
+        "duration": "PT24M35S",
+        "publisher": {
+            "@type": "Organization",
+            "name": "天涯社区",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://example.com/tianya_logo.png"
+            }
+        },
+        "interactionStatistic": {
+            "@type": "InteractionCounter",
+            "interactionType": { "@type": "WatchAction" },
+            "userInteractionCount": 1280000
+        }
+    }
+    </script>
+    <!-- Article Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "天涯社区推出全新移动端应用 界面全面升级",
+        "description": "天涯社区正式发布全新移动端应用，界面设计全面升级，优化用户阅读体验，为经典论坛注入新活力。",
+        "datePublished": "2026-03-18T08:30:00+08:00",
+        "dateModified": "2026-03-18T10:00:00+08:00",
+        "publisher": {
+            "@type": "Organization",
+            "name": "天涯社区",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://example.com/tianya_logo.png"
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://example.com/tianya"
+        }
+    }
+    </script>
+</body>
+</html>
