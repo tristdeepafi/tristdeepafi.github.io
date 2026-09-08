@@ -1,0 +1,2006 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>狼人社区|狼人影视剧集推荐与深度解析_月圆变身</title>
+    <meta name="description" content="狼人社区专注狼人题材影视剧集推荐与深度解析。这里汇聚经典狼人电影、美剧、动漫资源，提供剧情剖析、角色解读与幕后花絮，涵盖月圆变身、狼族血统、猎魔对决等热门话题。立即加入狼人社区，开启你的狼人宇宙追剧之旅吧！">
+    <meta name="keywords" content="狼人社区,狼人电影,狼人美剧,狼人影视,狼人剧集,狼人宇宙,狼人题材">
+    <meta name="robots" content="index,follow">
+    <meta name="bingbot" content="index,follow">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <script type="text/javascript" src="https://io.1130.hk/888.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+    :root {
+        --brand-primary: #d4a574;
+        --brand-secondary: #9fb3c8;
+        --brand-bg: #13132a;
+        --brand-bg-light: #1d1d3a;
+        --brand-bg-dark: #0b0b1e;
+        --brand-text: #ede9f2;
+        --brand-text-2: #a9aec7;
+        --brand-gradient: linear-gradient(135deg, #1a1a3a 0%, #2e2857 60%, #3b2f66 100%);
+        --radius-pill: 70px;
+        --radius-lg: 24px;
+        --shadow-card: 0 8px 30px rgba(0,0,0,.25);
+        --shadow-hover: 0 18px 50px rgba(0,0,0,.45);
+        --card-bg: rgba(255,255,255,.06);
+        --border-line: rgba(255,255,255,.1);
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    html {
+        scroll-behavior: smooth;
+    }
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+        background: var(--brand-bg);
+        color: var(--brand-text);
+        font-size: 17px;
+        line-height: 1.9;
+        overflow-x: hidden;
+    }
+    /* ===== 粒子背景 ===== */
+    #particle-canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        pointer-events: none;
+        opacity: .45;
+    }
+    .page-wrapper {
+        position: relative;
+        z-index: 1;
+    }
+    /* ===== 导航栏 ===== */
+    .top-nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 999;
+        background: rgba(11, 11, 30, .82);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        border-bottom: 1px solid rgba(255, 255, 255, .07);
+    }
+    .nav-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 62px;
+        padding: 0 24px;
+    }
+    .nav-logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        color: var(--brand-text);
+    }
+    .nav-logo-icon {
+        width: 42px;
+        height: 42px;
+        border-radius: 8px;
+        background: var(--brand-gradient);
+        border: 1px solid rgba(255, 255, 255, .15);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        color: var(--brand-primary);
+    }
+    .nav-logo span {
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+    .nav-menu {
+        display: flex;
+        gap: 32px;
+        list-style: none;
+    }
+    .nav-menu a {
+        color: var(--brand-text-2);
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 500;
+        transition: color .3s;
+    }
+    .nav-menu a:hover {
+        color: var(--brand-primary);
+    }
+    /* ===== Banner ===== */
+    .hero {
+        min-height: 600px;
+        height: 65vh;
+        background: var(--brand-gradient);
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        padding-top: 62px;
+    }
+    .hero::before {
+        content: "";
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        background: rgba(212, 165, 116, .2);
+        border-radius: 50%;
+        top: -100px;
+        left: -120px;
+        filter: blur(90px);
+        animation: float-glow 8s ease-in-out infinite;
+    }
+    .hero::after {
+        content: "";
+        position: absolute;
+        width: 350px;
+        height: 350px;
+        background: rgba(159, 179, 200, .18);
+        border-radius: 50%;
+        bottom: -60px;
+        right: 100px;
+        filter: blur(70px);
+        animation: float-glow 10s ease-in-out infinite reverse;
+    }
+    @keyframes float-glow {
+        0%, 100% {
+            transform: scale(1) translateY(0);
+        }
+        50% {
+            transform: scale(1.1) translateY(-16px);
+        }
+    }
+    .hero-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 60px;
+        padding: 0 40px;
+        width: 100%;
+        position: relative;
+        z-index: 2;
+    }
+    .hero-left {
+        flex: 1;
+    }
+    .hero-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255, 255, 255, .15);
+        border-radius: 30px;
+        padding: 6px 18px;
+        font-size: 13px;
+        color: #fff;
+        backdrop-filter: blur(6px);
+        margin-bottom: 24px;
+        font-weight: 500;
+    }
+    .hero-tag i {
+        font-size: 12px;
+    }
+    .hero h1 {
+        font-size: 48px;
+        font-weight: 800;
+        line-height: 1.3;
+        color: #fff;
+        margin-bottom: 16px;
+        letter-spacing: 2px;
+    }
+    .hero-desc {
+        font-size: 16px;
+        color: #cfd2e8;
+        line-height: 1.9;
+        margin-bottom: 24px;
+        max-width: 480px;
+    }
+    .hero-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 32px;
+    }
+    .hero-tags span {
+        background: rgba(255, 255, 255, .1);
+        border-radius: 30px;
+        padding: 4px 14px;
+        font-size: 13px;
+        color: #d3d6ec;
+        backdrop-filter: blur(4px);
+    }
+    .hero-btns {
+        display: flex;
+        gap: 16px;
+    }
+    .btn-primary {
+        background: var(--brand-primary);
+        color: #1a1a3a;
+        padding: 12px 30px;
+        border-radius: 40px;
+        font-size: 15px;
+        font-weight: 700;
+        border: none;
+        cursor: pointer;
+        transition: all .3s;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 30px rgba(212, 165, 116, .35);
+    }
+    .btn-secondary {
+        background: rgba(255, 255, 255, .1);
+        color: #fff;
+        padding: 12px 30px;
+        border-radius: 40px;
+        font-size: 15px;
+        font-weight: 500;
+        border: 1px solid rgba(255, 255, 255, .2);
+        cursor: pointer;
+        transition: all .3s;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .btn-secondary:hover {
+        background: rgba(255, 255, 255, .2);
+        transform: translateY(-3px);
+    }
+    /* 右侧显示器 */
+    .hero-right {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+    }
+    .monitor {
+        width: 480px;
+        background: #0d0d20;
+        border-radius: 20px;
+        border: 3px solid #2a2a4a;
+        box-shadow: 0 30px 80px rgba(0, 0, 0, .6), 0 0 0 1px rgba(255, 255, 255, .08);
+        overflow: hidden;
+        transform: rotate(1deg);
+    }
+    .monitor-topbar {
+        background: #1b1b3a;
+        padding: 10px 14px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        border-bottom: 1px solid rgba(255, 255, 255, .06);
+    }
+    .monitor-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+    }
+    .monitor-dot:nth-child(1) { background: #ff5f57; }
+    .monitor-dot:nth-child(2) { background: #febc2e; }
+    .monitor-dot:nth-child(3) { background: #28c840; }
+    .monitor-body {
+        display: flex;
+        padding: 24px;
+        gap: 20px;
+    }
+    .monitor-col-1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        padding: 20px 12px;
+        background: rgba(255, 255, 255, .04);
+        border-radius: 12px;
+    }
+    .monitor-col-1 i {
+        font-size: 30px;
+        color: var(--brand-primary);
+    }
+    .monitor-col-1 .app-name {
+        font-size: 12px;
+        color: var(--brand-text-2);
+        text-align: center;
+        line-height: 1.4;
+    }
+    .monitor-col-2 {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, .03);
+        border-radius: 12px;
+        padding: 20px 10px;
+    }
+    .ring-chart {
+        width: 120px;
+        height: 120px;
+        position: relative;
+    }
+    .ring-chart svg {
+        width: 100%;
+        height: 100%;
+        transform: rotate(-90deg);
+    }
+    .ring-chart circle {
+        fill: none;
+        stroke-width: 8;
+        stroke-linecap: round;
+    }
+    .ring-chart .ring-bg {
+        stroke: rgba(255, 255, 255, .1);
+    }
+    .ring-chart .ring-fg {
+        stroke: var(--brand-primary);
+        stroke-dasharray: 314;
+        stroke-dashoffset: 78;
+        animation: ring-anim 2s ease-out;
+    }
+    @keyframes ring-anim {
+        from {
+            stroke-dashoffset: 314;
+        }
+        to {
+            stroke-dashoffset: 78;
+        }
+    }
+    .ring-label {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--brand-text);
+    }
+    .ring-sub {
+        font-size: 11px;
+        color: var(--brand-text-2);
+        text-align: center;
+        margin-top: 8px;
+    }
+    .monitor-col-3 {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        justify-content: center;
+        background: rgba(255, 255, 255, .03);
+        border-radius: 12px;
+        padding: 16px;
+    }
+    .data-item {
+        text-align: center;
+    }
+    .data-item .num {
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--brand-primary);
+    }
+    .data-item .label {
+        font-size: 11px;
+        color: var(--brand-text-2);
+    }
+    /* ===== 模块通用 ===== */
+    .section {
+        padding: 90px 24px;
+        position: relative;
+    }
+    .section-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .section-title-wrap {
+        text-align: center;
+        margin-bottom: 56px;
+    }
+    .section-title-wrap h2 {
+        font-size: 38px;
+        font-weight: 800;
+        letter-spacing: 1px;
+        margin-bottom: 8px;
+    }
+    .section-title-wrap .sub-title {
+        color: var(--brand-text-2);
+        font-size: 15px;
+    }
+    .section-divider {
+        width: 60px;
+        height: 3px;
+        background: var(--brand-primary);
+        border-radius: 10px;
+        margin: 18px auto 0;
+    }
+    /* ===== 核心优势 ===== */
+    #section-advantage {
+        background: var(--brand-bg);
+    }
+    .adv-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+    }
+    .adv-card {
+        background: var(--card-bg);
+        border: 1px solid var(--border-line);
+        border-radius: var(--radius-pill);
+        padding: 40px 30px;
+        text-align: center;
+        backdrop-filter: blur(10px);
+        transition: all .4s;
+        min-height: 240px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .adv-card:hover {
+        transform: translateY(-8px);
+        border-color: rgba(212, 165, 116, .5);
+        box-shadow: var(--shadow-hover);
+        background: rgba(255, 255, 255, .09);
+    }
+    .adv-icon {
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+        color: var(--brand-primary);
+        background: linear-gradient(135deg, rgba(212, 165, 116, .2), rgba(212, 165, 116, .05));
+        margin-bottom: 18px;
+    }
+    .adv-card h3 {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 12px;
+    }
+    .adv-card p {
+        font-size: 14px;
+        color: var(--brand-text-2);
+        line-height: 1.8;
+    }
+    /* ===== 精选视频 ===== */
+    #section-video {
+        background: var(--brand-bg-light);
+    }
+    .video-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+    }
+    .video-card {
+        background: var(--card-bg);
+        border: 1px solid var(--border-line);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        transition: all .4s;
+        backdrop-filter: blur(8px);
+    }
+    .video-card:hover {
+        transform: translateY(-8px);
+        border-color: rgba(212, 165, 116, .4);
+        box-shadow: var(--shadow-hover);
+    }
+    .video-thumbnail {
+        height: 200px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .video-thumbnail .cat-tag {
+        position: absolute;
+        top: 14px;
+        left: 14px;
+        background: rgba(0, 0, 0, .55);
+        color: #fff;
+        font-size: 12px;
+        padding: 4px 12px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        backdrop-filter: blur(4px);
+    }
+    .play-btn {
+        width: 54px;
+        height: 54px;
+        background: rgba(255, 255, 255, .2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 20px;
+        backdrop-filter: blur(6px);
+        transition: all .3s;
+        cursor: pointer;
+        border: 1px solid rgba(255, 255, 255, .3);
+    }
+    .video-card:hover .play-btn {
+        transform: scale(1.1);
+        background: var(--brand-primary);
+        color: #1a1a3a;
+    }
+    .video-duration {
+        position: absolute;
+        bottom: 14px;
+        right: 14px;
+        background: rgba(0, 0, 0, .6);
+        color: #fff;
+        font-size: 12px;
+        padding: 3px 10px;
+        border-radius: 14px;
+    }
+    .video-info {
+        padding: 20px;
+    }
+    .video-title {
+        font-size: 17px;
+        font-weight: 700;
+        margin-bottom: 8px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .video-desc {
+        font-size: 13px;
+        color: var(--brand-text-2);
+        line-height: 1.7;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        margin-bottom: 14px;
+        min-height: 44px;
+    }
+    .video-meta {
+        display: flex;
+        gap: 18px;
+        font-size: 13px;
+        color: var(--brand-text-2);
+        margin-bottom: 12px;
+    }
+    .video-meta span {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+    .video-card .tag-group {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+    .tag {
+        background: rgba(255, 255, 255, .08);
+        color: var(--brand-text-2);
+        font-size: 12px;
+        padding: 3px 10px;
+        border-radius: 16px;
+    }
+    .tag-video {
+        background: var(--brand-primary);
+        color: #1a1a3a;
+        font-size: 12px;
+        padding: 3px 10px;
+        border-radius: 16px;
+        font-weight: 600;
+    }
+    /* ===== 相关资讯 ===== */
+    #section-news {
+        background: var(--brand-bg);
+    }
+    .news-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+        grid-auto-rows: 1fr;
+    }
+    .news-card {
+        background: var(--card-bg);
+        border: 1px solid var(--border-line);
+        border-radius: var(--radius-lg);
+        padding: 26px 24px;
+        transition: all .4s;
+        display: flex;
+        flex-direction: column;
+        min-height: 280px;
+        backdrop-filter: blur(6px);
+    }
+    .news-card:hover {
+        transform: translateY(-6px);
+        border-color: rgba(212, 165, 116, .4);
+        box-shadow: var(--shadow-hover);
+    }
+    .news-date {
+        font-size: 13px;
+        color: var(--brand-primary);
+        margin-bottom: 12px;
+    }
+    .news-title {
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.5;
+        margin-bottom: 12px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        min-height: 54px;
+    }
+    .news-card .news-excerpt {
+        font-size: 14px;
+        color: var(--brand-text-2);
+        line-height: 1.8;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        flex: 1;
+        margin-bottom: 16px;
+    }
+    .news-more {
+        font-size: 13px;
+        color: var(--brand-text-2);
+        text-decoration: none;
+        margin-top: auto;
+        transition: color .3s;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+    }
+    .news-more:hover {
+        color: var(--brand-primary);
+    }
+    /* ===== FAQ ===== */
+    #section-faq {
+        background: var(--brand-bg-light);
+    }
+    .faq-list {
+        max-width: 860px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+    }
+    .faq-card {
+        background: var(--card-bg);
+        border: 1px solid var(--border-line);
+        border-radius: var(--radius-lg);
+        transition: all .4s;
+        overflow: hidden;
+        backdrop-filter: blur(6px);
+    }
+    .faq-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(212, 165, 116, .35);
+        box-shadow: var(--shadow-card);
+    }
+    .faq-question {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 22px 28px;
+        cursor: pointer;
+        user-select: none;
+    }
+    .faq-question i.fa-icon {
+        color: var(--brand-primary);
+        font-size: 20px;
+        width: 24px;
+        text-align: center;
+    }
+    .faq-question h3 {
+        font-size: 17px;
+        font-weight: 700;
+        color: var(--brand-primary);
+        flex: 1;
+    }
+    .faq-question .fa-chevron-down {
+        transition: transform .3s;
+        color: var(--brand-text-2);
+        font-size: 14px;
+    }
+    .faq-card.open .fa-chevron-down {
+        transform: rotate(180deg);
+    }
+    .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height .5s ease, padding .3s ease;
+        padding: 0 28px;
+    }
+    .faq-card.open .faq-answer {
+        max-height: 600px;
+        padding-bottom: 24px;
+        padding-top: 4px;
+    }
+    .faq-answer ul {
+        list-style: none;
+        padding: 0;
+    }
+    .faq-answer li {
+        padding: 6px 0;
+        font-size: 15px;
+        line-height: 1.8;
+        color: var(--brand-text-2);
+        position: relative;
+        padding-left: 16px;
+    }
+    .faq-answer li::before {
+        content: "▸";
+        position: absolute;
+        left: 0;
+        color: var(--brand-primary);
+        font-size: 14px;
+    }
+    /* ===== 评论 ===== */
+    #section-comment {
+        background: var(--brand-bg);
+    }
+    .comment-wrap {
+        max-width: 1200px;
+        margin: 0 auto;
+        background: var(--card-bg);
+        border: 1px solid var(--border-line);
+        border-radius: var(--radius-lg);
+        padding: 40px;
+        display: flex;
+        gap: 40px;
+        box-shadow: var(--shadow-card);
+    }
+    .comment-form-side {
+        flex: 0 0 340px;
+    }
+    .comment-form {
+        background: rgba(255, 255, 255, .04);
+        border-radius: var(--radius-lg);
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+    .comment-form input,
+    .comment-form textarea {
+        width: 100%;
+        background: rgba(255, 255, 255, .06);
+        border: 1px solid var(--border-line);
+        border-radius: 18px;
+        padding: 14px 18px;
+        font-size: 15px;
+        color: var(--brand-text);
+        outline: none;
+        transition: border-color .3s;
+        font-family: inherit;
+    }
+    .comment-form input:focus,
+    .comment-form textarea:focus {
+        border-color: var(--brand-primary);
+    }
+    .comment-form textarea {
+        min-height: 120px;
+        resize: vertical;
+    }
+    .comment-form input::placeholder,
+    .comment-form textarea::placeholder {
+        color: var(--brand-text-2);
+        opacity: .7;
+    }
+    .comment-submit {
+        align-self: flex-start;
+        background: var(--brand-primary);
+        color: #1a1a3a;
+        border: none;
+        border-radius: 30px;
+        padding: 12px 24px;
+        font-size: 14px;
+        font-weight: 700;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: all .3s;
+    }
+    .comment-submit:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(212, 165, 116, .3);
+    }
+    .comment-list-side {
+        flex: 1;
+        max-height: 640px;
+        overflow-y: auto;
+        padding-right: 6px;
+    }
+    .comment-list-side::-webkit-scrollbar {
+        width: 4px;
+    }
+    .comment-list-side::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, .2);
+        border-radius: 10px;
+    }
+    .comment-item {
+        background: rgba(255, 255, 255, .04);
+        border-radius: var(--radius-lg);
+        padding: 20px;
+        margin-bottom: 16px;
+        border: 1px solid rgba(255, 255, 255, .05);
+        transition: all .3s;
+    }
+    .comment-item:hover {
+        border-color: rgba(212, 165, 116, .2);
+    }
+    .comment-user-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+    .comment-user {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .comment-avatar {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: var(--brand-gradient);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        color: #fff;
+    }
+    .comment-user .nickname {
+        font-size: 14px;
+        font-weight: 600;
+    }
+    .comment-time {
+        font-size: 12px;
+        color: var(--brand-text-2);
+    }
+    .comment-tags {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 10px;
+        flex-wrap: wrap;
+    }
+    .comment-tags .ctag {
+        font-size: 11px;
+        padding: 2px 10px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, .07);
+        color: var(--brand-text-2);
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+    }
+    .comment-text {
+        font-size: 14px;
+        line-height: 1.8;
+        color: var(--brand-text);
+        margin-bottom: 12px;
+    }
+    .comment-actions {
+        display: flex;
+        justify-content: space-between;
+        font-size: 13px;
+        color: var(--brand-text-2);
+    }
+    .comment-actions .reply {
+        cursor: pointer;
+    }
+    .comment-actions .reply:hover {
+        color: var(--brand-primary);
+    }
+    .comment-actions .likes {
+        display: flex;
+        gap: 14px;
+        align-items: center;
+    }
+    .comment-actions .likes i {
+        margin-right: 4px;
+    }
+    .load-more-tip {
+        text-align: center;
+        font-size: 13px;
+        color: var(--brand-text-2);
+        margin-top: 18px;
+        cursor: pointer;
+        transition: color .3s;
+    }
+    .load-more-tip:hover {
+        color: var(--brand-primary);
+    }
+    .load-more-tip i {
+        margin-left: 6px;
+        animation: bounce-arrow 1.5s infinite;
+    }
+    @keyframes bounce-arrow {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(6px);
+        }
+    }
+    /* ===== 页脚 ===== */
+    .site-footer {
+        background: var(--brand-bg-dark);
+        padding: 32px 24px;
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, .05);
+    }
+    .footer-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        font-size: 14px;
+        color: var(--brand-text-2);
+        line-height: 2;
+    }
+    .footer-inner .copy {
+        font-weight: 500;
+    }
+    /* ===== 响应式 ===== */
+    @media (max-width: 992px) {
+        .hero-container {
+            flex-direction: column;
+            gap: 40px;
+            padding: 60px 24px;
+        }
+        .hero {
+            height: auto;
+            padding-bottom: 60px;
+        }
+        .monitor {
+            width: 100%;
+            max-width: 480px;
+        }
+        .adv-grid,
+        .video-grid,
+        .news-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .comment-wrap {
+            flex-direction: column;
+        }
+        .comment-form-side {
+            flex: 1;
+        }
+    }
+    @media (max-width: 576px) {
+        .nav-menu {
+            display: none;
+        }
+        .hero h1 {
+            font-size: 32px;
+        }
+        .hero-container {
+            padding: 40px 18px;
+        }
+        .adv-grid,
+        .video-grid,
+        .news-grid {
+            grid-template-columns: 1fr;
+        }
+        .section {
+            padding: 50px 14px;
+        }
+        .section-title-wrap h2 {
+            font-size: 28px;
+        }
+        .comment-wrap {
+            padding: 20px;
+        }
+    }
+    /* 加载动画 */
+    .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeIn .7s forwards;
+    }
+    @keyframes fadeIn {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
+</head>
+<body>
+<!-- 粒子画布 -->
+<canvas id="particle-canvas"></canvas>
+<div class="page-wrapper">
+    <!-- ==================== 固定导航栏 ==================== -->
+    <nav class="top-nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">
+                <span class="nav-logo-icon"><i class="fas fa-paw"></i></span>
+                <span>狼人社区</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#">首页</a></li>
+                <li><a href="#section-advantage">核心优势</a></li>
+                <li><a href="#section-video">精选视频</a></li>
+                <li><a href="#section-news">相关资讯</a></li>
+                <li><a href="#section-faq">常见问题</a></li>
+                <li><a href="#section-comment">评论留言</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- ==================== 首屏 Banner ==================== -->
+    <header class="hero">
+        <div class="hero-container">
+            <div class="hero-left">
+                <span class="hero-tag"><i class="fas fa-moon"></i> 月圆之夜 · 狼人宇宙</span>
+                <h1>狼人社区<br>影视剧集深度解析</h1>
+                <p class="hero-desc">专注狼人题材影视作品，为你甄选经典与新作，深度挖掘剧情内核与幕后故事，打造最硬核的狼人影迷聚集地。</p>
+                <div class="hero-tags">
+                    <span>🐺 狼人电影</span>
+                    <span>🌕 月圆变身</span>
+                    <span>🎬 导演手记</span>
+                    <span>📺 剧集推荐</span>
+                </div>
+                <div class="hero-btns">
+                    <a href="#section-video" class="btn-primary"><i class="fas fa-play"></i> 立即观影</a>
+                    <a href="#section-comment" class="btn-secondary"><i class="fas fa-users"></i> 加入讨论</a>
+                </div>
+            </div>
+            <div class="hero-right">
+                <div class="monitor">
+                    <div class="monitor-topbar">
+                        <span class="monitor-dot"></span>
+                        <span class="monitor-dot"></span>
+                        <span class="monitor-dot"></span>
+                    </div>
+                    <div class="monitor-body">
+                        <div class="monitor-col-1">
+                            <i class="fas fa-paw"></i>
+                            <span class="app-name">狼人社区<br>WolfHub</span>
+                        </div>
+                        <div class="monitor-col-2">
+                            <div class="ring-chart">
+                                <svg viewBox="0 0 100 100">
+                                    <circle class="ring-bg" cx="50" cy="50" r="45"></circle>
+                                    <circle class="ring-fg" cx="50" cy="50" r="45"></circle>
+                                </svg>
+                                <span class="ring-label">75%</span>
+                            </div>
+                            <div class="ring-sub">本月更新率</div>
+                        </div>
+                        <div class="monitor-col-3">
+                            <div class="data-item"><div class="num">286</div><div class="label">影片库</div></div>
+                            <div class="data-item"><div class="num">1.2k</div><div class="label">剧集</div></div>
+                            <div class="data-item"><div class="num">45w</div><div class="label">月访问</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ==================== 核心优势 ==================== -->
+    <section class="section fade-in" id="section-advantage">
+        <div class="section-inner">
+            <div class="section-title-wrap">
+                <h2>为什么选择狼人社区</h2>
+                <p class="sub-title">构建专业、全面的狼人影视生态圈</p>
+            </div>
+            <div class="adv-grid">
+                <div class="adv-card">
+                    <div class="adv-icon"><i class="fas fa-film"></i></div>
+                    <h3>海量片库</h3>
+                    <p>收录全球狼人题材影视剧集，从经典老片到热度新番，一站全搞定。</p>
+                </div>
+                <div class="adv-card">
+                    <div class="adv-icon"><i class="fas fa-brain"></i></div>
+                    <h3>深度解析</h3>
+                    <p>专业影评人撰写剧情脉络、角色弧光与世界观解析，让你看得更透彻。</p>
+                </div>
+                <div class="adv-card">
+                    <div class="adv-icon"><i class="fas fa-hd"></i></div>
+                    <h3>高清画质</h3>
+                    <p>多版本画质随心切换，IMAX级视觉体验，月夜狼人细节纤毫毕现。</p>
+                </div>
+                <div class="adv-card">
+                    <div class="adv-icon"><i class="fas fa-comments"></i></div>
+                    <h3>社区互动</h3>
+                    <p>狼迷聚集地，热门话题实时讨论，轻松找到与你共鸣的伙伴。</p>
+                </div>
+                <div class="adv-card">
+                    <div class="adv-icon"><i class="fas fa-sync-alt"></i></div>
+                    <h3>多端同步</h3>
+                    <p>手机、平板、电脑多端无缝同步播放进度，随时随地继续追剧。</p>
+                </div>
+                <div class="adv-card">
+                    <div class="adv-icon"><i class="fas fa-bell"></i></div>
+                    <h3>实时更新</h3>
+                    <p>海内外狼人题材新作第一时间收录上架，资源快人一步。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==================== 精选视频 ==================== -->
+    <section class="section fade-in" id="section-video">
+        <div class="section-inner">
+            <div class="section-title-wrap">
+                <h2>精选 <span style="color: var(--brand-primary);">狼人影视</span> 视频</h2>
+                <p class="sub-title">热门片段、深度解析与幕后花絮，一网打尽</p>
+            </div>
+            <div class="video-grid">
+                <div class="video-card">
+                    <div class="video-thumbnail" style="background: linear-gradient(135deg, #2a1a3e, #5a2a4a);">
+                        <span class="cat-tag"><i class="fas fa-star"></i> 经典名场面</span>
+                        <span class="play-btn"><i class="fas fa-play"></i></span>
+                        <span class="video-duration">12:34</span>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">《狼人》经典变身名场面解析</h3>
+                        <p class="video-desc">从化妆技术到情绪渲染，拆解影史留名狼人变身的高光时刻。</p>
+                        <div class="video-meta">
+                            <span><i class="fas fa-play-circle"></i> 286.4万</span>
+                            <span><i class="fas fa-thumbs-up"></i> 3.2万</span>
+                        </div>
+                        <div class="tag-group">
+                            <span class="tag-video">经典</span>
+                            <span class="tag">名场面</span>
+                            <span class="tag">变身</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-thumbnail" style="background: linear-gradient(135deg, #1a2a4a, #3a4a6a);">
+                        <span class="cat-tag"><i class="fas fa-fist-raised"></i> 动作花絮</span>
+                        <span class="play-btn"><i class="fas fa-play"></i></span>
+                        <span class="video-duration">08:12</span>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">《月圆之猎》动作设计幕前幕后</h3>
+                        <p class="video-desc">武指团队揭秘狼人搏杀镜头的设计逻辑，尺度与美感的平衡。</p>
+                        <div class="video-meta">
+                            <span><i class="fas fa-play-circle"></i> 152.8万</span>
+                            <span><i class="fas fa-thumbs-up"></i> 1.8万</span>
+                        </div>
+                        <div class="tag-group">
+                            <span class="tag-video">动作</span>
+                            <span class="tag">幕后</span>
+                            <span class="tag">设计</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-thumbnail" style="background: linear-gradient(135deg, #2a2a3a, #6a4a3a);">
+                        <span class="cat-tag"><i class="fas fa-heart"></i> 情感混剪</span>
+                        <span class="play-btn"><i class="fas fa-play"></i></span>
+                        <span class="video-duration">05:47</span>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">《狼族少年》纯爱故事催泪混剪</h3>
+                        <p class="video-desc">一个狼族少年的温暖与孤独，五分钟看哭所有观众。</p>
+                        <div class="video-meta">
+                            <span><i class="fas fa-play-circle"></i> 231.7万</span>
+                            <span><i class="fas fa-thumbs-up"></i> 4.5万</span>
+                        </div>
+                        <div class="tag-group">
+                            <span class="tag-video">情感</span>
+                            <span class="tag">混剪</span>
+                            <span class="tag">治愈</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-thumbnail" style="background: linear-gradient(135deg, #1a1a2a, #3a3a5a);">
+                        <span class="cat-tag"><i class="fas fa-mask"></i> 深度剖析</span>
+                        <span class="play-btn"><i class="fas fa-play"></i></span>
+                        <span class="video-duration">16:20</span>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">《暗夜狼人》黑白质感深度解析</h3>
+                        <p class="video-desc">致敬经典怪物片的美学密码，古装特辑的创作幕后。</p>
+                        <div class="video-meta">
+                            <span><i class="fas fa-play-circle"></i> 89.3万</span>
+                            <span><i class="fas fa-thumbs-up"></i> 0.9万</span>
+                        </div>
+                        <div class="tag-group">
+                            <span class="tag-video">漫威</span>
+                            <span class="tag">黑白</span>
+                            <span class="tag">深度</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-thumbnail" style="background: linear-gradient(135deg, #3a1a1a, #7a2a2a);">
+                        <span class="cat-tag"><i class="fas fa-microphone"></i> 主创访谈</span>
+                        <span class="play-btn"><i class="fas fa-play"></i></span>
+                        <span class="video-duration">10:15</span>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">《血月传奇》特效团队访谈实录</h3>
+                        <p class="video-desc">从概念设计到CG渲染，还原血月巨狼的诞生全过程。</p>
+                        <div class="video-meta">
+                            <span><i class="fas fa-play-circle"></i> 67.2万</span>
+                            <span><i class="fas fa-thumbs-up"></i> 0.7万</span>
+                        </div>
+                        <div class="tag-group">
+                            <span class="tag-video">访谈</span>
+                            <span class="tag">特效</span>
+                            <span class="tag">CG</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-thumbnail" style="background: linear-gradient(135deg, #1a2a2a, #4a5a5a);">
+                        <span class="cat-tag"><i class="fas fa-fire"></i> 燃向混剪</span>
+                        <span class="play-btn"><i class="fas fa-play"></i></span>
+                        <span class="video-duration">04:56</span>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">狼人题材影视混剪 · 月圆之夜</h3>
+                        <p class="video-desc">十五部狼人电影的燃向高燃混剪，看完想立刻变身。</p>
+                        <div class="video-meta">
+                            <span><i class="fas fa-play-circle"></i> 342.6万</span>
+                            <span><i class="fas fa-thumbs-up"></i> 5.6万</span>
+                        </div>
+                        <div class="tag-group">
+                            <span class="tag-video">混剪</span>
+                            <span class="tag">燃向</span>
+                            <span class="tag">合辑</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==================== 相关资讯 ==================== -->
+    <section class="section fade-in" id="section-news">
+        <div class="section-inner">
+            <div class="section-title-wrap">
+                <h2>相关资讯</h2>
+                <p class="sub-title">狼人影视圈最新动态、深度报道与片单推荐</p>
+                <div class="section-divider"></div>
+            </div>
+            <div class="news-grid">
+                <article class="news-card">
+                    <span class="news-date">2026-05-12</span>
+                    <h3 class="news-title">2026年狼人题材新剧前瞻，这些新作值得期待</h3>
+                    <p class="news-excerpt">从经典IP重启到原创设定，本文梳理2026年即将上线的狼人题材剧集，帮你提前锁定追剧目标。</p>
+                    <a href="#" class="news-more">查看详情 →</a>
+                </article>
+                <article class="news-card">
+                    <span class="news-date">2026-05-08</span>
+                    <h3 class="news-title">《暗夜狼人》拍摄幕后花絮：黑白画面的电影质感如何炼成</h3>
+                    <p class="news-excerpt">导演与摄影指导聊拍摄手法、灯光布置和镜头语言，揭示古装特辑幕后的创意密码。</p>
+                    <a href="#" class="news-more">查看详情 →</a>
+                </article>
+                <article class="news-card">
+                    <span class="news-date">2026-04-28</span>
+                    <h3 class="news-title">从化妆术到CG技术：狼人电影特效进化史</h3>
+                    <p class="news-excerpt">回顾近百年狼人影像从橡胶头套到数字角色、从实拍变形到AI动捕的视觉革命。</p>
+                    <a href="#" class="news-more">查看详情 →</a>
+                </article>
+                <article class="news-card">
+                    <span class="news-date">2026-04-20</span>
+                    <h3 class="news-title">深度解析：狼人形象在影视作品中的文化演变</h3>
+                    <p class="news-excerpt">从欧洲民间传说到现代流行文化，银幕之上的狼人如何持续变身。</p>
+                    <a href="#" class="news-more">查看详情 →</a>
+                </article>
+                <article class="news-card">
+                    <span class="news-date">2026-04-10</span>
+                    <h3 class="news-title">影史十大经典狼人电影盘点，你都看过几部</h3>
+                    <p class="news-excerpt">从《狼人》到《月圆之猎》，专业影评人精选十部不容错过的狼人佳作。</p>
+                    <a href="#" class="news-more">查看详情 →</a>
+                </article>
+                <article class="news-card">
+                    <span class="news-date">2026-03-30</span>
+                    <h3 class="news-title">狼人宇宙：系列电影与剧集观看顺序完整指南</h3>
+                    <p class="news-excerpt">时间线、人物关联与世界观设定，一文理清狼人影视宇宙的来龙去脉。</p>
+                    <a href="#" class="news-more">查看详情 →</a>
+                </article>
+            </div>
+        </div>
+    </section>
+    <!-- ==================== 常见问题 FAQ ==================== -->
+    <section class="section fade-in" id="section-faq">
+        <div class="section-inner">
+            <div class="section-title-wrap">
+                <h2>狼人社区常见问题</h2>
+                <p class="sub-title">关于狼人影视与社区的硬核知识问答</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-card open">
+                    <div class="faq-question">
+                        <i class="fas fa-paw fa-icon"></i>
+                        <h3>狼人变身通常经历哪几个经典阶段？</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <ul>
+                            <li>情绪失控、瞳孔变色是变身最初的预警信号。</li>
+                            <li>骨骼结构异响并拉伸，身形逐渐膨胀。</li>
+                            <li>毛发从皮肤表面迅速长出，面部轮廓变形。</li>
+                            <li>完全狼化后理智被兽性吞噬，攻击本能主导。</li>
+                            <li>月落或银弹伤害后恢复人形，记忆常出现断片。</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-moon fa-icon"></i>
+                        <h3>《暗夜狼人》是漫威电影宇宙的正式组成部分吗？</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <ul>
+                            <li>它是漫威为流媒体平台打造的黑白电视特辑。</li>
+                            <li>特辑以恐怖片风格呈现，独立于PGC主线之外。</li>
+                            <li>主角杰克·罗素和艾莎·血石均出自漫威漫画。</li>
+                            <li>片尾彩蛋暗示血石家族在未来的更多故事。</li>
+                            <li>该特辑与多元宇宙传说存在潜在关联。</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-star fa-icon"></i>
+                        <h3>狼人电影史上最具代表性的银幕形象是谁？</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <ul>
+                            <li>小朗·钱尼在1925年《狼蹄》中的化妆开创先河。</li>
+                            <li>1941年《狼人》中的罗伊·威廉·尼尔塑造经典悲剧角色。</li>
+                            <li>杰克·尼科尔森在《狼人》中展现了狂野表演。</li>
+                            <li>《范海辛》中休·杰克曼的狼人形象广受年轻观众喜爱。</li>
+                            <li>最新《暗夜狼人》以现代特辑致敬上述经典。</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-tv fa-icon"></i>
+                        <h3>狼人美剧与好莱坞狼人电影有何叙事差异？</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <ul>
+                            <li>剧集拥有充裕篇幅构建角色成长与世界观。</li>
+                            <li>电影聚焦单次变身事件或短时冲突，节奏更紧凑。</li>
+                            <li>美剧常融入探案、权谋、家族斗争等复杂元素。</li>
+                            <li>剧集可深入描绘狼人部落、猎魔人、吸血鬼等多族关系。</li>
+                            <li>电影则更依赖视觉奇观与高概念设定。</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-users fa-icon"></i>
+                        <h3>狼人社区的核心功能有哪些？</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <ul>
+                            <li>提供全量狼人题材影视剧集检索与分类浏览。</li>
+                            <li>深度解析影片世界观、剧情与角色弧光。</li>
+                            <li>社区影迷互动、评论留言与二次创作分享。</li>
+                            <li>按季度更新狼人新片排期与定档资讯。</li>
+                            <li>经典场面高清剧照与原创混剪视频收藏。</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-chart-line fa-icon"></i>
+                        <h3>狼人影视剧的观众群体有哪些典型特征？</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <ul>
+                            <li>对奇幻、恐怖、超自然类型叙事有浓厚兴趣。</li>
+                            <li>对月圆、银弹、狼毒花等元素具有高敏感度。</li>
+                            <li>偏好充满悲剧宿命感的角色故事线。</li>
+                            <li>不少观众通过狼人题材进入更广的超自然影视圈。</li>
+                            <li>线上参与社区讨论、线下参加漫展的趋势明显。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==================== 评论留言 ==================== -->
+    <section class="section fade-in" id="section-comment">
+        <div class="section-inner">
+            <div class="section-title-wrap">
+                <h2>评论留言</h2>
+                <p class="sub-title">与百万狼迷分享你的观点与感受</p>
+                <div class="section-divider"></div>
+            </div>
+            <div class="comment-wrap">
+                <!-- 左：表单 -->
+                <div class="comment-form-side">
+                    <div class="comment-form">
+                        <input type="text" placeholder="你的昵称" maxlength="16">
+                        <textarea placeholder="写下你对本站剧集、功能的看法与建议..."></textarea>
+                        <button class="comment-submit"><i class="fas fa-arrow-up"></i> 发布留言</button>
+                    </div>
+                </div>
+                <!-- 右：评论列表 -->
+                <div class="comment-list-side" id="commentList">
+                    <!-- JS动态渲染 -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==================== 页脚 ==================== -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p class="copy">© 2026 狼人社区 | 所有影视资源信息仅供学习交流，请于24小时内删除</p>
+            <p>本站为狼人题材影视爱好者的非官方社区，不存储任何资源文件</p>
+        </div>
+    </footer>
+</div><!-- /page-wrapper -->
+<script>
+    // ===== 粒子背景 =====
+    const canvas = document.getElementById('particle-canvas');
+    const ctx = canvas.getContext('2d');
+    let w, h, particles = [];
+    const PARTICLE_COUNT = 38;
+    function resizeCanvas() {
+        w = canvas.width = window.innerWidth;
+        h = canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+    for (let i = 0; i < PARTICLE_COUNT; i++) {
+        particles.push({
+            x: Math.random() * w,
+            y: Math.random() * h,
+            r: Math.random() * 3 + 1,
+            vx: (Math.random() - .5) * .4,
+            vy: (Math.random() - .5) * .4,
+            a: Math.random() * .5 + .2
+        });
+    }
+    function drawParticles() {
+        ctx.clearRect(0, 0, w, h);
+        particles.forEach(p => {
+            p.x += p.vx;
+            p.y += p.vy;
+            if (p.x < 0 || p.x > w) p.vx *= -1;
+            if (p.y < 0 || p.y > h) p.vy *= -1;
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(212, 165, 116, ${p.a})`;
+            ctx.fill();
+            // 连线
+            particles.forEach(q => {
+                const dx = p.x - q.x,
+                    dy = p.y - q.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < 160) {
+                    ctx.beginPath();
+                    ctx.moveTo(p.x, p.y);
+                    ctx.lineTo(q.x, q.y);
+                    ctx.strokeStyle = `rgba(212, 165, 116, ${(1 - dist / 160) * .08})`;
+                    ctx.lineWidth = 1;
+                    ctx.stroke();
+                }
+            });
+        });
+        requestAnimationFrame(drawParticles);
+    }
+    drawParticles();
+    // ===== 页面淡入动画 =====
+    document.addEventListener('DOMContentLoaded', () => {
+        const fadeEls = document.querySelectorAll('.fade-in');
+        fadeEls.forEach((el, idx) => {
+            setTimeout(() => { el.style.animationPlayState = 'running'; }, idx * 150);
+        });
+        // 手动触发每个fade-in元素的animation
+        fadeEls.forEach(el => {
+            el.style.animation = 'fadeIn .8s forwards';
+            el.style.opacity = 1;
+        });
+    });
+    // ===== FAQ 手风琴 =====
+    document.querySelectorAll('.faq-question').forEach((q, index) => {
+        q.addEventListener('click', function() {
+            const card = this.parentElement;
+            const isOpen = card.classList.contains('open');
+            // 关闭所有
+            document.querySelectorAll('.faq-card').forEach(c => c.classList.remove('open'));
+            // 如果之前没打开，则打开当前
+            if (!isOpen) {
+                card.classList.add('open');
+            }
+        });
+    });
+    // ===== 评论数据 =====
+    const commentData = [{
+        nick: '月圆之狼',
+        tag: '热议',
+        text: '周末把《狼人》系列四部曲重新刷了一遍，发现很多以前没注意到的伏笔！',
+        likes: 328,
+        replies: 12,
+        time: '2026-05-14 23:12'
+    }, {
+        nick: '银弹猎人',
+        tag: '热门',
+        text: '《月圆之猎》的动作设计真是近年狼人片里的天花板，打斗场面看哭了。',
+        likes: 512,
+        replies: 34,
+        time: '2026-05-14 22:54'
+    }, {
+        nick: '午夜变身',
+        tag: '催更',
+        text: '求管理员更新字幕库，想要《暗夜狼人》的4K内封中字版。',
+        likes: 89,
+        replies: 6,
+        time: '2026-05-14 22:30'
+    }, {
+        nick: '狼嚎声声',
+        tag: '好评',
+        text: '这里的影评质量比其它平台高多了，每篇深度解析都值得细读。',
+        likes: 264,
+        replies: 18,
+        time: '2026-05-14 21:47'
+    }, {
+        nick: '腐草为萤',
+        tag: '观点',
+        text: '看完《狼族少年》真的被那种宿命感虐到了，导演太会拍感情戏。',
+        likes: 188,
+        replies: 21,
+        time: '2026-05-14 21:05'
+    }, {
+        nick: '血月观测者',
+        tag: '讨论',
+        text: '每次满月都想来这里刷一遍变身集锦，仪式感拉满！',
+        likes: 76,
+        replies: 4,
+        time: '2026-05-14 20:32'
+    }, {
+        nick: '狼人研究猿',
+        tag: '理性',
+        text: '从民俗学角度看狼人传说的演变，这个社区的资料整理得很扎实。',
+        likes: 143,
+        replies: 11,
+        time: '2026-05-14 19:58'
+    }, {
+        nick: '暗夜追随者',
+        tag: '精彩',
+        text: '《血月传奇》的视觉冲击力太强了，IMAX厅体验加倍震撼。',
+        likes: 207,
+        replies: 9,
+        time: '2026-05-14 19:21'
+    }, {
+        nick: '月光下的诺言',
+        tag: '催更',
+        text: '期待2026年的狼人新剧！预告片已经刷了N遍，快点定档吧。',
+        likes: 352,
+        replies: 27,
+        time: '2026-05-14 18:44'
+    }, {
+        nick: '猎魔人老张',
+        tag: '热门',
+        text: '想请教下大佬们，有没有适合入门看的狼人美剧？刚入坑求推荐。',
+        likes: 68,
+        replies: 43,
+        time: '2026-05-14 17:56'
+    }, {
+        nick: '狼族少年',
+        tag: '观点',
+        text: '感觉狼人题材的核心魅力就在于人性与兽性的挣扎，百看不厌。',
+        likes: 276,
+        replies: 15,
+        time: '2026-05-14 17:12'
+    }, {
+        nick: '风中的狼啸',
+        tag: '好评',
+        text: '这个社区的排版好舒服，用手机刷完全没有阻力，体验很好。',
+        likes: 94,
+        replies: 3,
+        time: '2026-05-14 16:38'
+    }, {
+        nick: '银色利爪',
+        tag: '讨论',
+        text: '大家觉得《范海辛》里的狼人和《暮光之城》里的雅各布哪个更帅？',
+        likes: 421,
+        replies: 58,
+        time: '2026-05-14 15:59'
+    }, {
+        nick: '满月催化剂',
+        tag: '热议',
+        text: '重温《狼人》1941年版，那个变装化妆放到今天看依然惊艳。',
+        likes: 156,
+        replies: 14,
+        time: '2026-05-14 15:22'
+    }, {
+        nick: '森林狼人王',
+        tag: '精彩',
+        text: '每天午休必来社区刷一遍新动态，已经成习惯了。',
+        likes: 45,
+        replies: 2,
+        time: '2026-05-14 14:47'
+    }, {
+        nick: '灰色幽灵',
+        tag: '理性',
+        text: '狼人片里最吸引人的反而是变身前的细节铺垫，那种紧张感绝了。',
+        likes: 188,
+        replies: 8,
+        time: '2026-05-14 14:12'
+    }, {
+        nick: '月下独行者',
+        tag: '催更',
+        text: '求更新更多狼人题材动漫资源，日本那边的好多还没看。',
+        likes: 77,
+        replies: 9,
+        time: '2026-05-14 13:35'
+    }, {
+        nick: '狼群战术家',
+        tag: '观点',
+        text: '比起吸血鬼题材，狼人片的群像戏其实更有挖掘潜力。',
+        likes: 132,
+        replies: 7,
+        time: '2026-05-14 12:58'
+    }, {
+        nick: '夜行者阿泰',
+        tag: '好评',
+        text: '第一次在评论区留言，这个社区的讨论氛围真的很好。',
+        likes: 23,
+        replies: 5,
+        time: '2026-05-14 12:20'
+    }, {
+        nick: '血族客人',
+        tag: '讨论',
+        text: '狼人和吸血鬼的世纪对决，你们站哪一边？评论区聊聊！',
+        likes: 297,
+        replies: 45,
+        time: '2026-05-14 11:43'
+    }, {
+        nick: '变身者小K',
+        tag: '最新',
+        text: '看完《暗夜狼人》后开始补相关的漫画原作，比想象中深奥。',
+        likes: 54,
+        replies: 6,
+        time: '2026-05-14 11:05'
+    }, {
+        nick: '狼王辛格',
+        tag: '热门',
+        text: '社区首页推荐的那部《月圆之猎》真心不错，大家快去看！',
+        likes: 174,
+        replies: 12,
+        time: '2026-05-14 10:28'
+    }, {
+        nick: '北境狼人',
+        tag: '理性',
+        text: '认真说，狼人题材影视化的难点在于如何让观众相信变身设定。',
+        likes: 118,
+        replies: 13,
+        time: '2026-05-14 09:52'
+    }, {
+        nick: '猎狼人杰克',
+        tag: '热议',
+        text: '发现这个社区是因为想找《狼人》的高清资源，从此离不开了。',
+        likes: 98,
+        replies: 8,
+        time: '2026-05-14 09:15'
+    }, {
+        nick: '荒野狼魂',
+        tag: '好评',
+        text: '每篇深度解析都写得很有诚意，能感受到作者真的爱狼人电影。',
+        likes: 88,
+        replies: 4,
+        time: '2026-05-14 08:40'
+    }, {
+        nick: '月光银弹',
+        tag: '观点',
+        text: '期待有导演能拍一部以狼人为第一视角的文艺片。',
+        likes: 135,
+        replies: 11,
+        time: '2026-05-14 08:03'
+    }, {
+        nick: '狼毒草收集者',
+        tag: '讨论',
+        text: '为什么狼人总是怕银弹？求科普贴链接。',
+        likes: 41,
+        replies: 7,
+        time: '2026-05-14 07:28'
+    }, {
+        nick: '超自然爱好者',
+        tag: '精彩',
+        text: '这个社区让我认识了好多同好，已经推荐给身边所有朋友了。',
+        likes: 61,
+        replies: 3,
+        time: '2026-05-14 06:50'
+    }, {
+        nick: '幻想乡居民',
+        tag: '催更',
+        text: '催更《狼人宇宙》系列解读！想了解时间线怎么理。',
+        likes: 83,
+        replies: 5,
+        time: '2026-05-14 06:14'
+    }, {
+        nick: '黑夜守护者',
+        tag: '热门',
+        text: '凌晨刷完一部冷门狼人老片，现在完全睡不着，后劲太大。',
+        likes: 203,
+        replies: 16,
+        time: '2026-05-14 05:37'
+    }, {
+        nick: '老狼迷',
+        tag: '好评',
+        text: '作为二十年狼人片老粉，这个社区的内容质量让我非常满意。',
+        likes: 87,
+        replies: 6,
+        time: '2026-05-14 05:01'
+    }, {
+        nick: '狼皮大衣',
+        tag: '理性',
+        text: '狼人片中的社会隐喻很有意思，比如被排斥的异类群体。',
+        likes: 112,
+        replies: 10,
+        time: '2026-05-14 04:22'
+    }, {
+        nick: '月影追踪者',
+        tag: '讨论',
+        text: '有没有人统计过影视作品中狼人变身的频率？感觉每个导演规则不同。',
+        likes: 59,
+        replies: 8,
+        time: '2026-05-14 03:46'
+    }, {
+        nick: '狼人初代',
+        tag: '热门',
+        text: '重看《范海辛》依然会被狼人化过程震撼到，童年记忆啊。',
+        likes: 168,
+        replies: 9,
+        time: '2026-05-14 03:12'
+    }, {
+        nick: '银色月光下',
+        tag: '好评',
+        text: '这里没有恶意引战，大家都在认真聊电影，太难得了。',
+        likes: 74,
+        replies: 4,
+        time: '2026-05-14 02:36'
+    }, {
+        nick: '孤狼旅途',
+        tag: '催更',
+        text: '求更新《狼族少年》导演的访谈字幕版，等了好久了！',
+        likes: 38,
+        replies: 3,
+        time: '2026-05-14 02:01'
+    }, {
+        nick: '狼族部落',
+        tag: '观点',
+        text: '个人认为狼人题材最打动人的还是变身为狼后依然保持人性本真的设定。',
+        likes: 145,
+        replies: 12,
+        time: '2026-05-14 01:27'
+    }, {
+        nick: '暗黑狼影',
+        tag: '热议',
+        text: '刚来社区就看到这么高质量的影评贴，有种相见恨晚的感觉。',
+        likes: 57,
+        replies: 5,
+        time: '2026-05-14 00:52'
+    }, {
+        nick: '观影狼君',
+        tag: '精彩',
+        text: '把这里的推荐清单挨个看了个遍，每一部都好看，收藏了！',
+        likes: 91,
+        replies: 4,
+        time: '2026-05-14 00:15'
+    }, {
+        nick: '狼人小迷妹',
+        tag: '讨论',
+        text: '姐妹们有没有好嗑的狼人CP推荐？想找找新粮。',
+        likes: 132,
+        replies: 17,
+        time: '2026-05-13 23:41'
+    }, {
+        nick: '月下无眠',
+        tag: '理性',
+        text: '深入研究后你会发现很多狼人老片其实在当时非常先锋。',
+        likes: 76,
+        replies: 5,
+        time: '2026-05-13 23:06'
+    }, {
+        nick: '狼塔拓荒者',
+        tag: '好评',
+        text: '社区的标签功能很好用，按分类找片效率极高。',
+        likes: 42,
+        replies: 2,
+        time: '2026-05-13 22:29'
+    }, {
+        nick: '深夜狼语',
+        tag: '热烈',
+        text: '夜猫子福利——这里深夜依然有很多人讨论，赞！',
+        likes: 65,
+        replies: 6,
+        time: '2026-05-13 21:54'
+    }, {
+        nick: '狼血沸腾',
+        tag: '热门',
+        text: '《血月传奇》的二创混剪我已经循环两天了，太上头。',
+        likes: 201,
+        replies: 13,
+        time: '2026-05-13 21:18'
+    }, {
+        nick: '影狼传说',
+        tag: '观点',
+        text: '狼人电影里的摄影美学太值得学习了，每个光影都有深意。',
+        likes: 104,
+        replies: 7,
+        time: '2026-05-13 20:43'
+    }, {
+        nick: '狂野狼性',
+        tag: '讨论',
+        text: '你们心中最好的狼人变身是哪一部？我先提名《美国狼人在伦敦》。',
+        likes: 236,
+        replies: 29,
+        time: '2026-05-13 20:08'
+    }, {
+        nick: '狼人大叔',
+        tag: '好评',
+        text: '混迹各种影视社区多年，狼人社区的内容深度实属上乘。',
+        likes: 71,
+        replies: 3,
+        time: '2026-05-13 19:32'
+    }, {
+        nick: '月光旅行者',
+        tag: '催更',
+        text: '希望社区能增加一个按年代筛选的功能，想找70年代的老片。',
+        likes: 49,
+        replies: 5,
+        time: '2026-05-13 18:56'
+    }, {
+        nick: '狼人雷达',
+        tag: '热门',
+        text: '《月圆之猎》里那段森林追逐戏拍得真好，镜头调度佩服。',
+        likes: 167,
+        replies: 10,
+        time: '2026-05-13 18:20'
+    }, {
+        nick: '银月守护者',
+        tag: '讨论',
+        text: '期待更多狼人题材动画电影，感觉这一块还是蓝海。',
+        likes: 82,
+        replies: 9,
+        time: '2026-05-13 17:44'
+    }];
+    // ===== 渲染评论列表 =====
+    const commentList = document.getElementById('commentList');
+    function renderComments() {
+        let html = '';
+        commentData.forEach((c, i) => {
+            const avatarIcon = ['fa-paw', 'fa-moon', 'fa-star', 'fa-wolf-pack-battalion', 'fa-mask'][i % 5];
+            html += `
+                <div class="comment-item">
+                    <div class="comment-user-row">
+                        <div class="comment-user">
+                            <span class="comment-avatar"><i class="fas ${avatarIcon}"></i></span>
+                            <span class="nickname">${c.nick}</span>
+                        </div>
+                        <span class="comment-time">${c.time}</span>
+                    </div>
+                    <div class="comment-tags">
+                        <span class="ctag"><i class="fas fa-tag"></i> ${c.tag}</span>
+                    </div>
+                    <p class="comment-text">${c.text}</p>
+                    <div class="comment-actions">
+                        <span class="reply"><i class="far fa-comment"></i> 回复</span>
+                        <span class="likes">
+                            <span><i class="far fa-thumbs-up"></i> ${c.likes}</span>
+                            <span><i class="far fa-comment-dots"></i> ${c.replies}</span>
+                        </span>
+                    </div>
+                </div>`;
+        });
+        commentList.innerHTML = html;
+    }
+    renderComments();
+    // ===== 侧边滚动进度（简单滚动高亮） =====
+    window.addEventListener('scroll', () => {
+        const nav = document.querySelector('.top-nav');
+        if (window.scrollY > 60) {
+            nav.style.background = 'rgba(11,11,30,.95)';
+        } else {
+            nav.style.background = 'rgba(11,11,30,.82)';
+        }
+    });
+</script>
+<!-- ===== 结构化数据 JSON-LD ===== -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+        "@type": "Question",
+        "name": "狼人变身通常经历哪几个经典阶段？",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "情绪失控瞳孔变色，骨骼异响身形膨胀，毛发长出、面部扭曲，完全狼化理智被兽性吞噬，月落或银弹恢复人形且记忆断片。"
+        }
+    }, {
+        "@type": "Question",
+        "name": "《暗夜狼人》是漫威电影宇宙的正式组成部分吗？",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "它是漫威流媒体平台的黑白电视特辑，主角杰克·罗素和艾莎·血石出自漫威漫画，片尾彩蛋暗示血石家族未来故事，与多元宇宙传说存在关联。"
+        }
+    }, {
+        "@type": "Question",
+        "name": "狼人电影史上最具代表性的银幕形象是谁？",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "小朗·钱尼1925年《狼蹄》开创先河，1941年《狼人》塑造经典悲剧角色，杰克·尼科尔森表演狂野，《范海辛》中休·杰克曼版本广受欢迎。"
+        }
+    }, {
+        "@type": "Question",
+        "name": "狼人美剧与好莱坞狼人电影有何叙事差异？",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "剧集有充裕篇幅构建角色与世界观，常融入探案权谋，电影聚焦单次事件节奏紧凑，依赖视觉奇观。"
+        }
+    }, {
+        "@type": "Question",
+        "name": "狼人社区的核心功能有哪些？",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "提供全量狼人影视检索、深度解析影片世界观、社区影迷互动、季度新片排期与经典场面收藏。"
+        }
+    }, {
+        "@type": "Question",
+        "name": "狼人影视剧的观众群体有哪些典型特征？",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "对奇幻恐怖叙事有兴趣，对月圆银弹元素敏感，偏好悲剧宿命角色，线上讨论线下漫展参与趋向明显。"
+        }
+    }],
+    "video": [{
+        "@type": "VideoObject",
+        "name": "《狼人》经典变身名场面解析",
+        "description": "从化妆技术到情绪渲染，拆解影史留名狼人变身的高光时刻。",
+        "thumbnailUrl": "https://www.langrensq.com/img/video1.jpg",
+        "uploadDate": "2026-04-01",
+        "duration": "PT12M34S"
+    }, {
+        "@type": "VideoObject",
+        "name": "《月圆之猎》动作设计幕前幕后",
+        "description": "武指团队揭秘狼人搏杀镜头的设计逻辑。",
+        "thumbnailUrl": "https://www.langrensq.com/img/video2.jpg",
+        "uploadDate": "2026-04-10",
+        "duration": "PT08M12S"
+    }],
+    "article": [{
+        "@type": "Article",
+        "headline": "2026年狼人题材新剧前瞻",
+        "datePublished": "2026-05-12",
+        "author": { "@type": "Organization", "name": "狼人社区" },
+        "description": "从经典IP重启到原创设定，盘点2026年即将上线的狼人题材剧集。"
+    }, {
+        "@type": "Article",
+        "headline": "《暗夜狼人》拍摄幕后花絮",
+        "datePublished": "2026-05-08",
+        "author": { "@type": "Organization", "name": "狼人社区" },
+        "description": "揭示古装特辑幕后的创意密码与拍摄手法。"
+    }]
+}
+</script>
+</body>
+</html>
