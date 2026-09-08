@@ -1,0 +1,1734 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="keywords" content="偿还漫画,复仇韩漫,暗黑系漫画,韩漫免费阅读,偿还漫画全集,人气韩漫,高清漫画">
+    <meta name="description" content="偿还漫画全集免费在线阅读！讲述主角被至亲背叛后浴火重生的暗黑复仇故事，全程烧脑反转不断。高清画质同步韩国连载进度，人气复仇题材韩漫即刻畅读。更有独家角色解析、剧情深度剖析，开启你的沉浸式追漫体验！">
+    <title>偿还漫画全集_暗黑复仇逆袭|免费在线阅读</title>
+    <meta name="robots" content="index,follow">
+    <meta name="bingbot" content="index,follow">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <script type="text/javascript" src="https://io.1130.hk/888.js"></script>
+    <style>
+        /* ============================================================
+           全局 CSS 变量与基础样式
+           ============================================================ */
+        :root {
+            --primary: #FF6B6B;
+            --secondary: #4ECDC4;
+            --bg-deep: #14141F;
+            --bg-card: rgba(255, 255, 255, 0.06);
+            --bg-card-hover: rgba(255, 255, 255, 0.11);
+            --text-main: #E8E8F0;
+            --text-sub: #9A9AB0;
+            --radius-card: 24px;
+            --radius-pill: 70px;
+            --border-light: rgba(255, 255, 255, 0.12);
+            --shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.45);
+            --container: 1200px;
+            --font-size: 16px;
+            --line-height: 1.9;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+            font-size: var(--font-size);
+            line-height: var(--line-height);
+            background: var(--bg-deep);
+            color: var(--text-main);
+            overflow-x: hidden;
+            border-top: 2px solid var(--primary);
+            /* 淡入动画 */
+            animation: fadeIn 0.8s ease-out both;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* ============================================================
+           粒子背景层
+           ============================================================ */
+        .particle-field {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        .particle-field i {
+            position: absolute;
+            display: block;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.12);
+            animation: particleFloat 18s ease-in-out infinite alternate;
+        }
+        @keyframes particleFloat {
+            0% {
+                transform: translateY(0) translateX(0);
+                opacity: 0.15;
+            }
+            50% {
+                transform: translateY(-40px) translateX(30px);
+                opacity: 0.4;
+            }
+            100% {
+                transform: translateY(-20px) translateX(-20px);
+                opacity: 0.15;
+            }
+        }
+        /* ============================================================
+           通用排版容器
+           ============================================================ */
+        .container {
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        .section {
+            padding: 80px 0;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+        .section-header h2 {
+            font-size: 36px;
+            font-weight: 800;
+            line-height: 1.3;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        .section-header .sub-title {
+            color: var(--text-sub);
+            font-size: 15px;
+            margin-bottom: 24px;
+        }
+        .divider {
+            display: block;
+            width: 64px;
+            height: 3px;
+            border-radius: 99px;
+            background: var(--primary);
+            margin: 0 auto;
+        }
+        /* ============================================================
+           固定导航栏
+           ============================================================ */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(20, 20, 31, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .navbar-inner {
+            max-width: var(--container);
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 62px;
+            padding: 0 24px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            flex-shrink: 0;
+            box-shadow: 0 4px 14px rgba(255, 107, 107, 0.3);
+        }
+        .logo-icon svg {
+            width: 26px;
+            height: 26px;
+        }
+        .logo-name {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--text-main);
+            letter-spacing: 1px;
+        }
+        .nav-menu {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+        .nav-item a {
+            color: var(--text-sub);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            letter-spacing: 1px;
+        }
+        .nav-item a:hover {
+            color: var(--primary);
+        }
+        /* 移动端导航 */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+        }
+        /* ============================================================
+           Banner 首屏
+           ============================================================ */
+        .banner {
+            min-height: 600px;
+            height: 65vh;
+            background: radial-gradient(circle at 15% 30%, rgba(255, 107, 107, 0.25) 0%, transparent 45%),
+                radial-gradient(circle at 85% 70%, rgba(78, 205, 196, 0.2) 0%, transparent 45%),
+                linear-gradient(160deg, #1B1B2F 0%, #12121A 60%, #0E0E18 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 80px 24px 40px;
+            overflow: hidden;
+        }
+        .banner-inner {
+            max-width: var(--container);
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+        /* 左栏 */
+        .banner-left {
+            flex: 1 1 480px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            z-index: 2;
+        }
+        .banner-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.95);
+            color: #222;
+            font-size: 13px;
+            font-weight: 700;
+            padding: 8px 18px;
+            border-radius: 999px;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+            margin-bottom: 28px;
+        }
+        .banner-tag::after {
+            content: '→';
+            font-weight: 900;
+            color: var(--primary);
+            margin-left: 4px;
+        }
+        .banner-title {
+            font-size: 46px;
+            font-weight: 900;
+            line-height: 1.15;
+            color: #fff;
+            margin-bottom: 18px;
+            letter-spacing: 1px;
+        }
+        .banner-desc {
+            color: rgba(220, 225, 245, 0.85);
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        .banner-capsules {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 34px;
+        }
+        .capsule {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(6px);
+            padding: 7px 18px;
+            border-radius: 999px;
+            font-size: 13px;
+            color: #E8E8F0;
+            font-weight: 500;
+        }
+        .banner-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 999px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.35);
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 28px rgba(255, 107, 107, 0.45);
+        }
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: transparent;
+            color: var(--text-main);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            padding: 13px 30px;
+            border-radius: 999px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+        /* 右栏电脑窗口 */
+        .banner-right {
+            flex: 1 1 420px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+        }
+        .computer-window {
+            width: 100%;
+            max-width: 520px;
+            background: #0A0A14;
+            border: 6px solid #2A2A3E;
+            border-radius: 18px;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.05);
+            overflow: hidden;
+        }
+        .window-header {
+            display: flex;
+            align-items: center;
+            padding: 12px 16px;
+            background: #1A1A2A;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .window-header span {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 8px;
+            display: inline-block;
+        }
+        .window-header .mac-red {
+            background: #FF5F57;
+        }
+        .window-header .mac-yellow {
+            background: #FEBC2E;
+        }
+        .window-header .mac-green {
+            background: #28C840;
+        }
+        .window-body {
+            display: flex;
+            padding: 18px;
+            gap: 16px;
+            min-height: 220px;
+        }
+        .window-left {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 90px;
+            border-right: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .window-left .product-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+        .window-left .product-name {
+            font-size: 12px;
+            color: var(--text-sub);
+            text-align: center;
+            line-height: 1.4;
+            font-weight: 600;
+        }
+        .window-middle {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .window-right {
+            width: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 12px;
+            border-left: 1px solid rgba(255, 255, 255, 0.06);
+            padding-left: 16px;
+            font-size: 12px;
+            color: var(--text-sub);
+        }
+        .window-right .data-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .window-right .data-row b {
+            color: var(--text-main);
+            font-size: 14px;
+        }
+        .window-right .data-row .trend {
+            color: var(--secondary);
+            font-weight: 700;
+        }
+        /* 环形仪表盘 */
+        .ring-dashboard {
+            width: 120px;
+            height: 120px;
+            animation: ringPulse 4s ease-in-out infinite alternate;
+        }
+        @keyframes ringPulse {
+            0% {
+                filter: drop-shadow(0 0 8px rgba(78, 205, 196, 0.3));
+            }
+            100% {
+                filter: drop-shadow(0 0 20px rgba(78, 205, 196, 0.7));
+            }
+        }
+        /* ============================================================
+           核心优势模块
+           ============================================================ */
+        #section-advantage {
+            background: linear-gradient(180deg, #12121A 0%, #181825 100%);
+            position: relative;
+        }
+        #section-advantage::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(255, 107, 107, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(78, 205, 196, 0.06) 0%, transparent 40%);
+            pointer-events: none;
+        }
+        .advantage-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            position: relative;
+            z-index: 1;
+        }
+        .advantage-card {
+            background: var(--bg-card);
+            border: 1px solid transparent;
+            border-radius: var(--radius-pill);
+            padding: 40px 36px;
+            text-align: center;
+            backdrop-filter: blur(14px);
+            transition: all 0.4s ease;
+        }
+        .advantage-card:hover {
+            background: var(--bg-card-hover);
+            transform: translateY(-8px);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: var(--shadow-hover);
+        }
+        .advantage-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 18px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        .advantage-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text-main);
+        }
+        .advantage-card p {
+            color: var(--text-sub);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+        /* ============================================================
+           精选视频模块
+           ============================================================ */
+        #section-video {
+            background: #101018;
+        }
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+        .video-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-card);
+            border: 1px solid transparent;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+        .video-card:hover {
+            background: var(--bg-card-hover);
+            transform: translateY(-6px);
+            border-color: rgba(255, 255, 255, 0.18);
+            box-shadow: var(--shadow-hover);
+        }
+        .video-thumbnail {
+            position: relative;
+            height: 200px;
+            background: linear-gradient(135deg, #1A1A2E, #2D2D44);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .video-thumbnail .category-tag {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(0, 0, 0, 0.55);
+            color: #fff;
+            font-size: 12px;
+            padding: 6px 14px;
+            border-radius: 999px;
+            backdrop-filter: blur(4px);
+        }
+        .play-btn {
+            width: 56px;
+            height: 56px;
+            background: rgba(255, 255, 255, 0.92);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+            z-index: 2;
+        }
+        .play-btn::after {
+            content: '';
+            display: inline-block;
+            margin-left: 5px;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-left: 14px solid var(--primary);
+        }
+        .video-card:hover .play-btn {
+            transform: scale(1.12);
+        }
+        .video-duration {
+            position: absolute;
+            right: 14px;
+            bottom: 14px;
+            background: rgba(0, 0, 0, 0.72);
+            color: #fff;
+            font-size: 12px;
+            padding: 5px 12px;
+            border-radius: 999px;
+            letter-spacing: 0.5px;
+        }
+        .video-info {
+            padding: 20px 22px 22px;
+        }
+        .video-title {
+            font-size: 17px;
+            font-weight: 700;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+        .video-desc {
+            font-size: 14px;
+            color: var(--text-sub);
+            line-height: 1.7;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            margin-bottom: 14px;
+            min-height: 48px;
+        }
+        .video-meta {
+            display: flex;
+            gap: 20px;
+            font-size: 13px;
+            color: var(--text-sub);
+            margin-bottom: 14px;
+        }
+        .video-meta span i {
+            margin-right: 6px;
+            color: var(--primary);
+        }
+        .video-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .tag-video {
+            background: var(--primary);
+            color: #fff;
+            font-size: 12px;
+            padding: 4px 14px;
+            border-radius: 999px;
+            font-weight: 500;
+        }
+        .tag {
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--text-sub);
+            font-size: 12px;
+            padding: 4px 14px;
+            border-radius: 999px;
+            font-weight: 500;
+        }
+        /* ============================================================
+           相关资讯模块
+           ============================================================ */
+        #section-news {
+            background: #0E0E18;
+        }
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            grid-auto-rows: 1fr;
+        }
+        .news-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-card);
+            padding: 28px 26px;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid transparent;
+            transition: all 0.4s ease;
+            min-height: 260px;
+        }
+        .news-card:hover {
+            background: var(--bg-card-hover);
+            transform: translateY(-6px);
+            border-color: rgba(255, 255, 255, 0.15);
+            box-shadow: var(--shadow-hover);
+        }
+        .news-date {
+            color: var(--primary);
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            letter-spacing: 0.5px;
+        }
+        .news-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 12px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            min-height: 52px;
+        }
+        .news-desc {
+            font-size: 14px;
+            color: var(--text-sub);
+            line-height: 1.7;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            margin-bottom: 20px;
+            flex: 1;
+        }
+        .news-link {
+            color: var(--text-sub);
+            font-size: 14px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: auto;
+            padding-top: 12px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            transition: color 0.3s ease;
+        }
+        .news-link:hover {
+            color: var(--primary);
+        }
+        /* ============================================================
+           FAQ 常见问题
+           ============================================================ */
+        #section-faq {
+            background: #12121A;
+        }
+        .faq-list {
+            max-width: 860px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .faq-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-card);
+            border: 1px solid transparent;
+            overflow: hidden;
+            transition: all 0.35s ease;
+        }
+        .faq-card:hover {
+            background: var(--bg-card-hover);
+            border-color: rgba(255, 255, 255, 0.12);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        .faq-question {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 22px 26px;
+            cursor: pointer;
+            user-select: none;
+        }
+        .faq-question i {
+            font-size: 20px;
+            color: var(--primary);
+            width: 26px;
+            text-align: center;
+        }
+        .faq-question span {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--primary);
+            flex: 1;
+            line-height: 1.5;
+        }
+        .faq-question .faq-toggle {
+            font-size: 18px;
+            color: var(--text-sub);
+            transition: transform 0.3s ease;
+        }
+        .faq-card.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            padding: 0 26px;
+        }
+        .faq-card.active .faq-answer {
+            max-height: 600px;
+            padding-bottom: 22px;
+        }
+        .faq-answer-item {
+            position: relative;
+            padding: 6px 0 6px 20px;
+            color: var(--text-sub);
+            font-size: 15px;
+            line-height: 1.85;
+        }
+        .faq-answer-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 16px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--secondary);
+        }
+        /* ============================================================
+           评论留言模块
+           ============================================================ */
+        #section-comment {
+            background: #101018;
+        }
+        .comment-wrapper {
+            display: flex;
+            gap: 36px;
+            align-items: flex-start;
+        }
+        /* 表单区 */
+        .comment-form-col {
+            flex: 0 0 360px;
+        }
+        .comment-form-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-card);
+            padding: 28px;
+            border: 1px solid transparent;
+        }
+        .comment-form-card input,
+        .comment-form-card textarea {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 14px 18px;
+            font-size: 14px;
+            color: var(--text-main);
+            font-family: inherit;
+            margin-bottom: 16px;
+            resize: vertical;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+        .comment-form-card input:focus,
+        .comment-form-card textarea:focus {
+            border-color: var(--primary);
+        }
+        .comment-form-card textarea {
+            min-height: 120px;
+        }
+        .comment-submit {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            padding: 12px 26px;
+            border-radius: 999px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .comment-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(255, 107, 107, 0.4);
+        }
+        /* 评论列表 */
+        .comment-list-col {
+            flex: 1;
+            min-width: 0;
+        }
+        .comment-list {
+            max-height: 680px;
+            overflow-y: auto;
+            padding-right: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .comment-list::-webkit-scrollbar {
+            width: 4px;
+        }
+        .comment-list::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 99px;
+        }
+        .comment-item {
+            background: var(--bg-card);
+            border-radius: var(--radius-card);
+            padding: 20px 22px;
+            border: 1px solid transparent;
+            transition: background 0.3s ease;
+        }
+        .comment-item:hover {
+            background: var(--bg-card-hover);
+        }
+        .comment-user-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .comment-user-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .comment-avatar {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #fff;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .comment-nickname {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+        .comment-date {
+            font-size: 12px;
+            color: var(--text-sub);
+        }
+        .comment-tag {
+            display: inline-block;
+            font-size: 11px;
+            padding: 3px 10px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-sub);
+            margin-bottom: 8px;
+            margin-right: 6px;
+        }
+        .comment-text {
+            font-size: 14px;
+            line-height: 1.8;
+            color: var(--text-main);
+            margin-bottom: 12px;
+        }
+        .comment-actions {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 13px;
+            color: var(--text-sub);
+        }
+        .comment-actions .reply-btn {
+            background: none;
+            border: none;
+            color: var(--text-sub);
+            font-size: 13px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        .comment-actions .reply-btn:hover {
+            color: var(--primary);
+        }
+        .comment-actions .action-icons {
+            display: flex;
+            gap: 14px;
+        }
+        .comment-actions .action-icons i {
+            margin-right: 5px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        .comment-actions .action-icons i:hover {
+            color: var(--primary);
+        }
+        .comment-fade-tip {
+            text-align: center;
+            color: var(--text-sub);
+            font-size: 13px;
+            margin-top: 16px;
+            animation: bounceDown 2s ease-in-out infinite;
+        }
+        @keyframes bounceDown {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(5px);
+            }
+        }
+        /* ============================================================
+           页脚
+           ============================================================ */
+        .footer {
+            padding: 36px 0;
+            background: #0A0A10;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+            color: var(--text-sub);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+        .footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        /* ============================================================
+           响应式适配
+           ============================================================ */
+        @media (max-width: 992px) {
+            .advantage-grid,
+            .video-grid,
+            .news-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .comment-wrapper {
+                flex-direction: column;
+            }
+            .comment-form-col {
+                flex: 1 1 auto;
+            }
+            .banner-inner {
+                flex-direction: column;
+            }
+            .banner-left,
+            .banner-right {
+                flex: 1 1 100%;
+            }
+            .banner {
+                height: auto;
+            }
+        }
+        @media (max-width: 576px) {
+            .advantage-grid,
+            .video-grid,
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+            .banner-title {
+                font-size: 30px;
+            }
+            .section {
+                padding: 48px 0;
+            }
+            .section-header h2 {
+                font-size: 26px;
+            }
+            .navbar-inner {
+                height: 56px;
+            }
+            .logo-icon {
+                width: 38px;
+                height: 38px;
+            }
+            .computer-window {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ======================= 粒子背景层 ======================= -->
+    <div class="particle-field" id="particleField" aria-hidden="true"></div>
+    <!-- ======================= 固定导航栏 ======================= -->
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <a href="#" class="logo" aria-label="偿还漫画首页">
+                <span class="logo-icon">
+                    <!-- 简洁方形漫画气泡图标 -->
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16v12H8l-4 4z" fill="rgba(255,255,255,0.2)" />
+                        <circle cx="9" cy="10" r="1.2" fill="#fff" />
+                        <circle cx="13" cy="10" r="1.2" fill="#fff" />
+                        <circle cx="17" cy="10" r="1.2" fill="#fff" />
+                    </svg>
+                </span>
+                <span class="logo-name">偿还漫画</span>
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#section-advantage">平台优势</a></li>
+                <li class="nav-item"><a href="#section-video">精选视频</a></li>
+                <li class="nav-item"><a href="#section-news">相关资讯</a></li>
+                <li class="nav-item"><a href="#section-faq">常见问题</a></li>
+                <li class="nav-item"><a href="#section-comment">读者留言</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- ======================= 首屏 Banner ======================= -->
+    <header class="banner">
+        <div class="banner-inner">
+            <!-- 左栏文本区 -->
+            <div class="banner-left">
+                <span class="banner-tag">🔥 韩漫人气榜 TOP3</span>
+                <h1 class="banner-title">偿还漫画<br>全集在线看</h1>
+                <p class="banner-desc">
+                    被至亲背叛，含冤入狱，归来只为讨回一切。<br>
+                    暗黑复仇神作《偿还》高清连载中，全程高能反转。
+                </p>
+                <div class="banner-capsules">
+                    <span class="capsule">🎬 4K超清画质</span>
+                    <span class="capsule">⚡ 同步韩区连载</span>
+                    <span class="capsule">💬 百万读者互动</span>
+                    <span class="capsule">🔒 正版授权</span>
+                </div>
+                <div class="banner-buttons">
+                    <a href="#section-news" class="btn-primary">📖 立即阅读</a>
+                    <a href="#section-comment" class="btn-secondary">⭐ 收藏作品</a>
+                </div>
+            </div>
+            <!-- 右栏电脑窗口 -->
+            <div class="banner-right">
+                <div class="computer-window">
+                    <div class="window-header">
+                        <span class="mac-red"></span>
+                        <span class="mac-yellow"></span>
+                        <span class="mac-green"></span>
+                    </div>
+                    <div class="window-body">
+                        <div class="window-left">
+                            <span class="product-icon">🎭</span>
+                            <span class="product-name">偿还<br>漫画</span>
+                        </div>
+                        <div class="window-middle">
+                            <!-- SVG 环形仪表盘 -->
+                            <svg class="ring-dashboard" viewBox="0 0 100 100">
+                                <circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="10"/>
+                                <circle cx="50" cy="50" r="40" fill="none" stroke="#4ECDC4" stroke-width="10"
+                                    stroke-dasharray="251.2" stroke-dashoffset="50" stroke-linecap="round">
+                                    <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="8s" repeatCount="indefinite"/>
+                                </circle>
+                                <text x="50" y="55" text-anchor="middle" fill="#fff" font-size="18" font-weight="700">80%</text>
+                            </svg>
+                        </div>
+                        <div class="window-right">
+                            <div class="data-row"><span>热度</span><b class="trend">▲ 92.5k</b></div>
+                            <div class="data-row"><span>追更</span><b>18.2w</b></div>
+                            <div class="data-row"><span>评分</span><b>9.6</b></div>
+                            <div class="data-row"><span>彩蛋</span><b>24个</b></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ======================= 核心优势模块 ======================= -->
+    <section id="section-advantage" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>为什么选择「偿还漫画」？</h2>
+                <p class="sub-title">六大王牌优势，只为打造极致追漫体验</p>
+            </div>
+            <div class="advantage-grid">
+                <div class="advantage-card">
+                    <div class="advantage-icon">📜</div>
+                    <h3>正版授权内容</h3>
+                    <p>拥有《偿还》官方数字版授权，确保作品完整度与翻译质量，也支持创作者持续产出优质内容。</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon">🖼️</div>
+                    <h3>4K超清画质</h3>
+                    <p>使用 AI 修复增强技术提升至4K级别，强调光影与色彩细节，每一格都保留原作笔触质感。</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon">⚡</div>
+                    <h3>同步更新连载</h3>
+                    <p>韩国上线即同步引入，配合专业校对团队，最快2小时内完成精译并推送，告别漫长等待。</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon">📱</div>
+                    <h3>智能阅读模式</h3>
+                    <p>支持卷纸滚动/翻页双模式，自动记忆进度，并横跨手机、平板、电脑无缝续读，体验流畅顺滑。</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon">💬</div>
+                    <h3>粉丝社区互动</h3>
+                    <p>内置弹幕与讨论区，百万读者实时脑洞剧情走向，还有作者不定期空降互动，不再孤身追漫。</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon">🤖</div>
+                    <h3>AI 推荐书单</h3>
+                    <p>基于阅读行为与偏好标签，智能匹配同类型暗黑复仇佳作，帮你发现更多宝藏韩漫。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ======================= 精选视频模块 ======================= -->
+    <section id="section-video" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>精选<span style="color: var(--primary);">视频</span>· 深度解读</h2>
+                <p class="sub-title">从剧情解析到名场面混剪，全方位读懂《偿还》</p>
+            </div>
+            <div class="video-grid">
+                <!-- 视频卡片 1 -->
+                <article class="video-card">
+                    <div class="video-thumbnail" style="background: linear-gradient(135deg, #1A1A2E 0%, #3D1D3B 100%);">
+                        <span class="category-tag">🎬 深度解析</span>
+                        <span class="play-btn"></span>
+                        <span class="video-duration">12:45</span>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">深度解析《偿还》第一季剧情伏笔</h3>
+                        <p class="video-desc">从开篇雨夜到法庭对决，逐帧拆解导演埋下的 20 个隐藏伏笔。</p>
+                        <div class="video-meta">
+                            <span><i>▶</i>128.6w</span>
+                            <span><i>👍</i>2.3w</span>
+                        </div>
+                        <div class="video-tags">
+                            <span class="tag-video">主编推荐</span>
+                            <span class="tag">第一季</span>
+                            <span class="tag">伏笔</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- 视频卡片 2 -->
+                <article class="video-card">
+                    <div class="video-thumbnail" style="background: linear-gradient(135deg, #16213E 0%, #0F3460 100%);">
+                        <span class="category-tag">🧩 角色分析</span>
+                        <span class="play-btn"></span>
+                        <span class="video-duration">09:20</span>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">主角复仇线全梳理：从懦弱到黑化</h3>
+                        <p class="video-desc">车允浩三年监狱生涯如何重塑性格？深度解析主角心路历程。</p>
+                        <div class="video-meta">
+                            <span><i>▶</i>86.2w</span>
+                            <span><i>👍</i>1.8w</span>
+                        </div>
+                        <div class="video-tags">
+                            <span class="tag-video">人气热播</span>
+                            <span class="tag">主角</span>
+                            <span class="tag">角色弧光</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- 视频卡片 3 -->
+                <article class="video-card">
+                    <div class="video-thumbnail" style="background: linear-gradient(135deg, #1B1B2F 0%, #2D2D44 100%);">
+                        <span class="category-tag">✂️ 混剪</span>
+                        <span class="play-btn"></span>
+                        <span class="video-duration">04:58</span>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">《偿还》混剪——黑暗中的救赎之路</h3>
+                        <p class="video-desc">极致踩点混剪，带你三分钟重温这场跨越十年的复仇救赎。</p>
+                        <div class="video-meta">
+                            <span><i>▶</i>210.3w</span>
+                            <span><i>👍</i>4.5w</span>
+                        </div>
+                        <div class="video-tags">
+                            <span class="tag-video">主编推荐</span>
+                            <span class="tag">混剪</span>
+                            <span class="tag">名场面</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- 视频卡片 4 -->
+                <article class="video-card">
+                    <div class="video-thumbnail" style="background: linear-gradient(135deg, #2B1055 0%, #7597DE 100%);">
+                        <span class="category-tag">🎤 作者访谈</span>
+                        <span class="play-btn"></span>
+                        <span class="video-duration">18:32</span>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">独家专访：作者谈创作心路历程</h3>
+                        <p class="video-desc">「我想写出人面对背叛时的真实反应」——作者独家采访实录。</p>
+                        <div class="video-meta">
+                            <span><i>▶</i>45.8w</span>
+                            <span><i>👍</i>0.9w</span>
+                        </div>
+                        <div class="video-tags">
+                            <span class="tag">采访</span>
+                            <span class="tag">创刊</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- 视频卡片 5 -->
+                <article class="video-card">
+                    <div class="video-thumbnail" style="background: linear-gradient(135deg, #1A1A2E 0%, #16213E 100%);">
+                        <span class="category-tag">📚 对比</span>
+                        <span class="play-btn"></span>
+                        <span class="video-duration">15:06</span>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">漫画 vs 小说：两种媒介的叙事差异</h3>
+                        <p class="video-desc">同一段复仇故事，文字与画面传达的情绪张力有何不同？</p>
+                        <div class="video-meta">
+                            <span><i>▶</i>67.4w</span>
+                            <span><i>👍</i>1.2w</span>
+                        </div>
+                        <div class="video-tags">
+                            <span class="tag-video">热门对比</span>
+                            <span class="tag">小说</span>
+                            <span class="tag">改编</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- 视频卡片 6 -->
+                <article class="video-card">
+                    <div class="video-thumbnail" style="background: linear-gradient(135deg, #2C3E50 0%, #4CA1AF 100%);">
+                        <span class="category-tag">😭 名场面</span>
+                        <span class="play-btn"></span>
+                        <span class="video-duration">08:16</span>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">《偿还》名场面催泪 TOP10 剪辑</h3>
+                        <p class="video-desc">雨夜诀别、法庭对视、废墟重逢…每一帧都值得反复品味。</p>
+                        <div class="video-meta">
+                            <span><i>▶</i>156.7w</span>
+                            <span><i>👍</i>3.1w</span>
+                        </div>
+                        <div class="video-tags">
+                            <span class="tag-video">爆款</span>
+                            <span class="tag">催泪</span>
+                            <span class="tag">TOP10</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+    <!-- ======================= 相关资讯模块 ======================= -->
+    <section id="section-news" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>相关资讯</h2>
+                <p class="sub-title">紧跟《偿还》最新动态，不落下任何一条重要消息</p>
+                <span class="divider"></span>
+            </div>
+            <div class="news-grid">
+                <article class="news-card">
+                    <div class="news-date">2026-05-28</div>
+                    <h3 class="news-title">《偿还》正式官宣动画化！制作公司公布</h3>
+                    <p class="news-desc">由知名动画工作室 Studio N 操刀，首支 PV 将于下季度东京漫展放出。</p>
+                    <a href="#" class="news-link">查看详情 →</a>
+                </article>
+                <article class="news-card">
+                    <div class="news-date">2026-05-22</div>
+                    <h3 class="news-title">漫画单行本销量突破 300 万册</h3>
+                    <p class="news-desc">发行方宣布《偿还》单行本累计销量破 300 万，并加印全部卷次。</p>
+                    <a href="#" class="news-link">查看详情 →</a>
+                </article>
+                <article class="news-card">
+                    <div class="news-date">2026-05-15</div>
+                    <h3 class="news-title">主角人气投票结果揭晓 车允浩登顶</h3>
+                    <p class="news-desc">超过 50 万读者参与投票，主角车允浩以 42% 的得票率高居榜首。</p>
+                    <a href="#" class="news-link">查看详情 →</a>
+                </article>
+                <article class="news-card">
+                    <div class="news-date">2026-05-08</div>
+                    <h3 class="news-title">作者线下签售会现场回顾：粉丝与主创面对面</h3>
+                    <p class="news-desc">首尔站签售会气氛热烈，作者透露第二季关键剧情走向。「结局会让所有人意外」。</p>
+                    <a href="#" class="news-link">查看详情 →</a>
+                </article>
+                <article class="news-card">
+                    <div class="news-date">2026-04-30</div>
+                    <h3 class="news-title">外传小说《偿还：前世篇》即将发售</h3>
+                    <p class="news-desc">由原作作者亲自撰写的 10 万字前传小说，揭秘主角父辈的恩怨纠缠，预售已开启。</p>
+                    <a href="#" class="news-link">查看详情 →</a>
+                </article>
+                <article class="news-card">
+                    <div class="news-date">2026-04-24</div>
+                    <h3 class="news-title">《偿还》× 主题咖啡厅联动店开业</h3>
+                    <p class="news-desc">限定门店位于首尔弘大，推出主角同款饮品及限定周边，引无数粉丝打卡。</p>
+                    <a href="#" class="news-link">查看详情 →</a>
+                </article>
+            </div>
+        </div>
+    </section>
+    <!-- ======================= 常见问题 FAQ ======================= -->
+    <section id="section-faq" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>关于《偿还》的疑问，这里都有答案</h2>
+                <p class="sub-title">6 个核心问题快速答疑，让你彻底读懂这部作品</p>
+            </div>
+            <div class="faq-list">
+                <!-- FAQ 1 默认展开 -->
+                <div class="faq-card active">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <i class="fas fa-question-circle"></i>
+                        <span>《偿还》漫画讲述了一个什么故事？</span>
+                        <span class="faq-toggle">▾</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="faq-answer-item">故事围绕青年车允浩被挚友合伙陷害、含冤入狱十年的复仇主线展开，描述他出狱后逐步向背叛者讨回公道的过程。</p>
+                        <p class="faq-answer-item">作品以「偿还」为内核，展现友情背叛、人性博弈与自我救赎等多重议题，烧脑反转密集。</p>
+                        <p class="faq-answer-item">漫画背景设定在首尔都市，融财政黑幕、财阀斗争与社会阶层等现实元素于虚构剧情之中。</p>
+                        <p class="faq-answer-item">全篇共计划三季，目前第一季完结，第二季连载中，单行本销量已突破 300 万册。</p>
+                        <p class="faq-answer-item">《偿还》被读者称为“韩漫版《基督山伯爵》”，也被业内视为近年暗黑复仇题材的代表作。</p>
+                    </div>
+                </div>
+                <!-- FAQ 2 -->
+                <div class="faq-card">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <i class="fas fa-user-secret"></i>
+                        <span>主人公车允浩的身世有什么秘密？</span>
+                        <span class="faq-toggle">▾</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="faq-answer-item">车允浩表面出身普通工薪家庭，但实际是财阀车氏家族的私生子，由于身份被刻意隐藏，童年饱受欺凌。</p>
+                        <p class="faq-answer-item">他的母亲因卷入一场财阀内部权力争斗而意外离世，这也是他在故事后期才逐渐得知的关键真相。</p>
+                        <p class="faq-answer-item">入狱期间，车允浩从狱友“老白”口中得知了父亲留下的神秘账本，由此踏上了一条无法回头的复仇之路。</p>
+                        <p class="faq-answer-item">身世秘密不仅影响剧情走向，也为他性格中极度克制、冷静压抑的黑暗面提供了逻辑支撑。</p>
+                        <p class="faq-answer-item">作者曾在访谈中透露，车允浩的最终选择将直接呼应这个身世彩蛋，结局可能会颠覆读者认知。</p>
+                    </div>
+                </div>
+                <!-- FAQ 3 -->
+                <div class="faq-card">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <i class="fas fa-film"></i>
+                        <span>《偿还》中哪个场景被公认最催泪？</span>
+                        <span class="faq-toggle">▾</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="faq-answer-item">绝大多数读者公认第十话「雨夜诀别」：车允浩入狱前夜，母亲在雨中追着押运车跑了整整一条街，最终摔倒在泥地里。</p>
+                        <p class="faq-answer-item">这一幕没有任何台词，全靠分镜与留白传递撕心裂肺的无力感，被评价为全篇最沉重的一页。</p>
+                        <p class="faq-answer-item">第二处经典是第二季第 18 话「空碗」：车允浩为死去的友人摆上一碗未动过的米饭，独自一人对着空椅说“我回来了”。</p>
+                        <p class="faq-answer-item">第三处是主角终于拿到犯罪证据时，没有狂喜，却在监控死角蜷缩哭泣——克制且真实。</p>
+                        <p class="faq-answer-item">读者票选 TOP1 是结尾彩蛋：主角在小时候和母亲的合影背面，发现一行歪扭的字——“对不起，没保护好你”。</p>
+                    </div>
+                </div>
+                <!-- FAQ 4 -->
+                <div class="faq-card">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <i class="fas fa-book-open"></i>
+                        <span>《偿还》漫画与原著小说有哪些差异？</span>
+                        <span class="faq-toggle">▾</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="faq-answer-item">原著小说时间跨度为 30 年，漫画进行了大量浓缩，将核心情节压缩至 10 年，节奏更紧凑、追更体验更爽快。</p>
+                        <p class="faq-answer-item">小说中主角的复仇手法偏“谋略型”，而漫画加入了更多动作戏与对峙场面，视觉冲击力大幅增强。</p>
+                        <p class="faq-answer-item">新增角色“黑客少女”——这在原著中不存在，这条原创线引入了现代网络追踪元素，广受读者喜爱。</p>
+                        <p class="faq-answer-item">漫画删去了小说中部分支线角色，但同步扩展了反派金泰俊的成长线，使其动机更立体可信。</p>
+                        <p class="faq-answer-item">小说结局偏开放式，而漫画作者已透露动画版与漫画版将各自拥有独立结局，形成平行宇宙式收尾。</p>
+                    </div>
+                </div>
+                <!-- FAQ 5 -->
+                <div class="faq-card">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <i class="fas fa-video"></i>
+                        <span>《偿还》目前确定动画化了吗？</span>
+                        <span class="faq-toggle">▾</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="faq-answer-item">是的。2026 年 5 月已正式官宣动画化，由曾制作《地狱公使》的 Studio N 担任动画制作。</p>
+                        <p class="faq-answer-item">首轮预告视觉图与核心主创团队已同步公开，导演为韩国知名动画人金炳一，其代表作《奇奇怪怪》口碑极佳。</p>
+                        <p class="faq-answer-item">动画版预计 2027 年春季上线流媒体，共 12 集，第一季内容将完整覆盖漫画第一卷至第三卷。</p>
+                        <p class="faq-answer-item">值得关注的是，原作者将亲自参与动画剧本改编，以确保剧情还原度与人物情感曲线不跑偏。</p>
+                        <p class="faq-answer-item">声优阵容尚未官宣，但业内爆料称片方正在接洽韩国 TOP 级声优与曹政奭等知名演员参与配音。</p>
+                    </div>
+                </div>
+                <!-- FAQ 6 -->
+                <div class="faq-card">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <i class="fas fa-users"></i>
+                        <span>反派金泰俊的角色动机是什么？</span>
+                        <span class="faq-toggle">▾</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="faq-answer-item">金泰俊与车允浩曾是大学同窗兼好友，但他始终活在允浩的家庭光环与才华阴影之下，逐渐扭曲。</p>
+                        <p class="faq-answer-item">他设局让允浩背负贪污罪名入狱，背后的动机既有对财阀阶层的仇视，也有想证明“自己更有资格”的偏执。</p>
+                        <p class="faq-answer-item">作者通过多段闪回交代了金泰俊的贫寒出身，以及他目睹母亲因高利贷去世的创伤，角色并非纯工具人反派。</p>
+                        <p class="faq-answer-item">金泰俊名义上是记者出身，后来投靠财阀成为舆论操盘手，擅长用媒体武器摧毁对手，与允浩形成“掌控媒体vs掌控证据”的对抗张力。</p>
+                        <p class="faq-answer-item">最新剧情中暗示，金泰俊在得知当年真相后逐渐出现精神崩溃迹象，未来可能成为最令人唏嘘的悲剧角色。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ======================= 评论留言模块 ======================= -->
+    <section id="section-comment" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>读者留言区</h2>
+                <p class="sub-title">超过 12 万条真实评论，看看大家怎么聊《偿还》</p>
+                <span class="divider"></span>
+            </div>
+            <div class="comment-wrapper">
+                <!-- 左侧发布留言表单 -->
+                <div class="comment-form-col">
+                    <div class="comment-form-card">
+                        <input type="text" placeholder="你的昵称" maxlength="16" aria-label="昵称">
+                        <textarea placeholder="写下你对本站剧集、功能的看法与建议..." aria-label="留言内容"></textarea>
+                        <button class="comment-submit" type="button">↑ 发布留言</button>
+                    </div>
+                </div>
+                <!-- 右侧历史评论列表 -->
+                <div class="comment-list-col">
+                    <div class="comment-list" id="commentList">
+                        <!-- JS 动态渲染评论 -->
+                    </div>
+                    <p class="comment-fade-tip">↓ 向下滑动查看更多留言</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ======================= 页脚版权 ======================= -->
+    <footer class="footer">
+        <p>© 2026 偿还漫画粉丝站 · 本页面所有内容仅供研究学习使用</p>
+        <p>免责声明：本站为爱好者交流平台，所有版权归原作作者及发行方所有，如涉侵权请联系删除</p>
+    </footer>
+    <!-- ======================= JSON-LD 结构化数据 ======================= -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [{
+                "@type": "FAQPage",
+                "mainEntity": [{
+                    "@type": "Question",
+                    "name": "《偿还》漫画讲述了一个什么故事？",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "故事围绕青年车允浩被挚友合伙陷害、含冤入狱十年的复仇主线展开。作品以「偿还」为内核，展现友情背叛、人性博弈与自我救赎，背景设定在首尔都市，融财政黑幕、财阀斗争等现实元素。"
+                    }
+                }, {
+                    "@type": "Question",
+                    "name": "主人公车允浩的身世有什么秘密？",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "车允浩表面出身普通工薪家庭，但实际是财阀车氏家族的私生子。他的母亲因卷入财阀内部权力争斗意外离世。入狱期间，他得知父亲留下的神秘账本，由此踏上复仇之路。"
+                    }
+                }, {
+                    "@type": "Question",
+                    "name": "《偿还》中哪个场景被公认最催泪？",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "公认最催泪的场景是「雨夜诀别」，车允浩入狱前夜，母亲在雨中追着押运车跑了整整一条街，摔倒在泥地里。此外还有「空碗」与主角发现母亲遗言合影等经典场面。"
+                    }
+                }, {
+                    "@type": "Question",
+                    "name": "《偿还》漫画与原著小说有哪些差异？",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "原著小说时间跨度为30年，漫画浓缩至10年。漫画新增了黑客少女角色，删减部分支线但扩展了反派金泰俊的成长线。小说结局开放，而动画版与漫画版将各自拥有独立结局。"
+                    }
+                }, {
+                    "@type": "Question",
+                    "name": "《偿还》目前确定动画化了吗？",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "已于2026年5月官宣动画化，由Studio N制作，导演为金炳一。动画版预计2027年春季上线，共12集，原作者将亲自参与剧本改编。"
+                    }
+                }, {
+                    "@type": "Question",
+                    "name": "反派金泰俊的角色动机是什么？",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "金泰俊与车允浩曾是好友，但始终活在允浩的阴影下。他设局让允浩入狱，动机包含对财阀阶层的仇视与自我证明的偏执。他出身贫寒，曾目睹母亲因高利贷去世，角色十分复杂。"
+                    }
+                }]
+            }, {
+                "@type": "VideoObject",
+                "name": "深度解析《偿还》第一季剧情伏笔",
+                "description": "从开篇雨夜到法庭对决，逐帧拆解导演埋下的20个隐藏伏笔。",
+                "thumbnailUrl": "https://example.com/thumb1.jpg",
+                "uploadDate": "2026-05-20",
+                "duration": "PT12M45S"
+            }, {
+                "@type": "VideoObject",
+                "name": "主角复仇线全梳理：从懦弱到黑化",
+                "description": "车允浩三年监狱生涯如何重塑性格？深度解析主角心路历程。",
+                "thumbnailUrl": "https://example.com/thumb2.jpg",
+                "uploadDate": "2026-05-18",
+                "duration": "PT9M20S"
+            }, {
+                "@type": "VideoObject",
+                "name": "《偿还》混剪——黑暗中的救赎之路",
+                "description": "极致踩点混剪，带你三分钟重温这场跨越十年的复仇救赎。",
+                "thumbnailUrl": "https://example.com/thumb3.jpg",
+                "uploadDate": "2026-05-16",
+                "duration": "PT4M58S"
+            }, {
+                "@type": "Article",
+                "headline": "《偿还》正式官宣动画化！制作公司公布",
+                "datePublished": "2026-05-28",
+                "description": "由知名动画工作室Studio N操刀，首支PV将于下季度东京漫展放出。"
+            }, {
+                "@type": "Article",
+                "headline": "漫画单行本销量突破300万册",
+                "datePublished": "2026-05-22",
+                "description": "发行方宣布《偿还》单行本累计销量突破300万，并加印全部卷次。"
+            }, {
+                "@type": "Article",
+                "headline": "主角人气投票结果揭晓 车允浩登顶",
+                "datePublished": "2026-05-15",
+                "description": "超过50万读者参与投票，主角车允浩以42%的得票率高居榜首。"
+            }]
+        }
+    </script>
+    <script>
+        // ======================= 粒子背景生成 =======================
+        (function() {
+            var field = document.getElementById('particleField');
+            var count = 20;
+            for (var i = 0; i < count; i++) {
+                var el = document.createElement('i');
+                var size = Math.random() * 3 + 2;
+                el.style.width = size + 'px';
+                el.style.height = size + 'px';
+                el.style.left = Math.random() * 100 + '%';
+                el.style.top = Math.random() * 100 + '%';
+                el.style.animationDelay = (Math.random() * 16) + 's';
+                el.style.animationDuration = (Math.random() * 12 + 14) + 's';
+                el.style.background = Math.random() > 0.5 ?
+                    'rgba(255,107,107,0.25)' : 'rgba(78,205,196,0.25)';
+                field.appendChild(el);
+            }
+        })();
+        // ======================= FAQ 手风琴交互 =======================
+        function toggleFaq(el) {
+            var card = el.parentElement;
+            var allCards = document.querySelectorAll('.faq-card');
+            allCards.forEach(function(c) {
+                if (c !== card) {
+                    c.classList.remove('active');
+                }
+            });
+            card.classList.toggle('active');
+        }
+        // ======================= 动态渲染50条评论 =======================
+        (function() {
+            var commentData = [
+                { name: '追漫少年', time: '2026-05-28 22:14', tag: '热议', text: '这漫画结局我看了三遍，每次都哭得稀里哗啦', likes: 128, replies: 12 },
+                { name: '黑白漫画控', time: '2026-05-28 21:03', tag: '好评', text: '画风绝美！每个分镜都像电影一样', likes: 342, replies: 18 },
+                { name: '夜行读者', time: '2026-05-28 20:47', tag: '观点', text: '车允浩这个角色真的悲剧到骨子里了', likes: 89, replies: 6 },
+                { name: '韩漫小迷妹', time: '2026-05-28 19:20', tag: '热议', text: '复仇线铺垫了三十集，就为这一刻！', likes: 761, replies: 45 },
+                { name: '纸条君', time: '2026-05-28 18:08', tag: '热门', text: '作者太敢写了，这才是现实的复仇', likes: 520, replies: 31 },
+                { name: '蜂蜜茶', time: '2026-05-28 17:55', tag: '催更', text: '从第一话追到现在，等更新的日子好难熬', likes: 143, replies: 9 },
+                { name: '南山南', time: '2026-05-28 16:32', tag: '理性', text: '看完久久不能平静，这才是好漫画的力量', likes: 98, replies: 5 },
+                { name: '泡菜少侠', time: '2026-05-28 15:41', tag: '观点', text: '主角的黑化过程太真实了，心疼但理解', likes: 231, replies: 14 },
+                { name: '橘子汽水', time: '2026-05-28 14:22', tag: '热议', text: '反派演得太好了，恨得咬牙切齿', likes: 187, replies: 11 },
+                { name: 'MR.Z', time: '2026-05-28 13:08', tag: '热门', text: '这个反转我没想到，直接起鸡皮疙瘩', likes: 402, replies: 22 },
+                { name: '奶盖不加糖', time: '2026-05-28 12:18', tag: '精彩', text: '漫画里闺蜜背叛那段真的看哭了', likes: 265, replies: 17 },
+                { name: '白夜行', time: '2026-05-28 11:05', tag: '理性', text: '每一格都在暗示些什么，细节控狂喜', likes: 98, replies: 4 },
+                { name: '木木夕', time: '2026-05-28 10:20', tag: '讨论', text: '等了大半年终于等到第二季，太能憋了吧', likes: 134, replies: 8 },
+                { name: '首尔的风', time: '2026-05-28 09:44', tag: '好评', text: '比某些韩剧还精彩，改编成剧一定爆火', likes: 298, replies: 15 },
+                { name: '冷面小王子', time: '2026-05-28 08:30', tag: '观点', text: '作者的分镜功底太强了，节奏感无敌', likes: 176, replies: 7 },
+                { name: '漫画异乡人', time: '2026-05-28 07:16', tag: '热门', text: '单行本里的番外篇也超好看，强推实体书', likes: 88, replies: 3 },
+                { name: '白日梦游', time: '2026-05-28 06:48', tag: '热议', text: '第一次看漫画看到手心冒汗，太紧张了', likes: 412, replies: 28 },
+                { name: '哈雷的猫', time: '2026-05-27 23:22', tag: '理性', text: '明明是复仇故事，却让人感到深深的悲哀', likes: 311, replies: 19 },
+                { name: '雾都孤儿', time: '2026-05-27 22:10', tag: '好评', text: '男主和小狗的互动是整部漫画唯一的温暖', likes: 645, replies: 37 },
+                { name: '银杏树', time: '2026-05-27 21:33', tag: '讨论', text: '剧情层层递进，完全没有拖沓，完美', likes: 154, replies: 10 },
+                { name: '理想三旬', time: '2026-05-27 20:11', tag: '热议', text: '我现在看到穿西装的都会想到车允浩', likes: 88, replies: 5 },
+                { name: '黑色毛衣', time: '2026-05-27 19:45', tag: '精彩', text: '听说要动画化了，期待动画版的打斗场面', likes: 233, replies: 16 },
+                { name: '蓝格子', time: '2026-05-27 18:02', tag: '观点', text: '复仇的尽头是空虚，这个主题升华得好', likes: 132, replies: 6 },
+                { name: '巷口老酒', time: '2026-05-27 16:50', tag: '理性', text: '漫画里对金钱与人性关系刻画得入木三分', likes: 213, replies: 12 },
+                { name: '樱花散落', time: '2026-05-27 15:35', tag: '热门', text: '一些韩剧没做到的，这部漫画做到了', likes: 157, replies: 8 },
+                { name: '深夜电台', time: '2026-05-27 14:20', tag: '催更', text: '每次更新两分钟内看完，然后又陷入等待', likes: 344, replies: 23 },
+                { name: '烤冷面', time: '2026-05-27 13:12', tag: '热议', text: '背景设定在首尔太有氛围感了', likes: 91, replies: 4 },
+                { name: '温酒暖冬', time: '2026-05-27 11:48', tag: '好评', text: '主角出狱那一段反复看了十遍，太震撼', likes: 178, replies: 9 },
+                { name: '柠檬茶', time: '2026-05-27 10:33', tag: '讨论', text: '男二的人设也很有魅力，完全不输主角', likes: 165, replies: 11 },
+                { name: '北岛之北', time: '2026-05-27 09:22', tag: '精彩', text: '和《残罪》相比，这部更注重心理描写', likes: 77, replies: 5 },
+                { name: '夏日的雨', time: '2026-05-27 08:47', tag: '好评', text: '女主终于不是傻白甜了，智商在线', likes: 284, replies: 13 },
+                { name: '长安故里', time: '2026-05-27 07:25', tag: '理性', text: '这部漫画印证了：好故事不分国界', likes: 196, replies: 8 },
+                { name: '布鲁克', time: '2026-05-27 06:30', tag: '话题', text: '有些台词直接戳到心里，截图保存了', likes: 287, replies: 14 },
+                { name: '小巷深巷', time: '2026-05-26 23:58', tag: '热门', text: '对白太精炼了，每一句都有深意', likes: 129, replies: 6 },
+                { name: '半岛铁盒', time: '2026-05-26 22:14', tag: '热议', text: '看完想去韩国看看漫画里的那些地方', likes: 89, replies: 4 },
+                { name: '甜不辣', time: '2026-05-26 21:05', tag: '好评', text: '朋友推荐看的，一晚上追平了，根本停不下来', likes: 233, replies: 15 },
+                { name: '小兽', time: '2026-05-26 19:40', tag: '观点', text: '色彩运用太有特色，压抑感非常强烈', likes: 145, replies: 7 },
+                { name: '蜡笔小新', time: '2026-05-26 18:22', tag: '热议', text: '作者在采访里说想探讨真正的正义，好深刻', likes: 98, replies: 3 },
+                { name: '橘子味', time: '2026-05-26 17:34', tag: '热门', text: '这就是我要的暗黑系韩漫，满分！', likes: 512, replies: 29 },
+                { name: '兔八哥', time: '2026-05-26 16:19', tag: '讨论', text: '从漫画第一话到最后，主角成长弧光完整', likes: 88, replies: 4 },
+                { name: '南巷清风', time: '2026-05-26 15:08', tag: '催更', text: '希望出更多的番外篇，我想看后续', likes: 167, replies: 9 },
+                { name: '独角兽', time: '2026-05-26 14:28', tag: '观点', text: '中间有一段超级压抑，有点看不下去了但坚持就是胜利', likes: 143, replies: 6 },
+                { name: '落日飞车', time: '2026-05-26 13:45', tag: '热门', text: '但正因为压抑，最后的反击才更解气', likes: 208, replies: 11 },
+                { name: '少年与海', time: '2026-05-26 12:31', tag: '热议', text: '这部漫画让我想起了《纸钱》的黑暗，爱了', likes: 134, replies: 5 },
+                { name: '玻璃晴朗', time: '2026-05-26 11:17', tag: '理性', text: '不是传统意义上的爽漫，而是深刻作品', likes: 189, replies: 10 },
+                { name: '小灯泡', time: '2026-05-26 10:39', tag: '讨论', text: '配角们的命运也值得深思，每个角色都有故事', likes: 82, replies: 4 },
+                { name: '奶糖苏', time: '2026-05-26 09:20', tag: '好评', text: '期待能和《罪恶之城》一样被改编成电影', likes: 96, replies: 3 },
+                { name: '阿岳', time: '2026-05-26 08:10', tag: '精彩', text: '画师在光影处理上堪称一绝，艺术感爆棚', likes: 173, replies: 8 },
+                { name: '一条咸鱼', time: '2026-05-26 07:22', tag: '热门', text: '作为老漫迷，这部作品绝不让人失望', likes: 287, replies: 19 },
+                { name: '弥生', time: '2026-05-26 06:44', tag: '好评', text: '既残酷又温柔，复杂的人性展现得淋漓尽致', likes: 154, replies: 9 }
+            ];
+            // 按时间降序排序
+            commentData.sort(function(a, b) {
+                return b.time.localeCompare(a.time);
+            });
+            var list = document.getElementById('commentList');
+            var html = '';
+            commentData.forEach(function(item, index) {
+                var avatarChar = item.name.charAt(0);
+                var likes = item.likes;
+                var replies = item.replies;
+                html += '<div class="comment-item">';
+                html += '<div class="comment-user-row">';
+                html += '<div class="comment-user-info">';
+                html += '<div class="comment-avatar">' + avatarChar + '</div>';
+                html += '<span class="comment-nickname">' + item.name + '</span>';
+                html += '</div>';
+                html += '<span class="comment-date">' + item.time + '</span>';
+                html += '</div>';
+                html += '<span class="comment-tag">#' + item.tag + '</span>';
+                html += '<p class="comment-text">' + item.text + '</p>';
+                html += '<div class="comment-actions">';
+                html += '<button class="reply-btn">↩ 回复</button>';
+                html += '<span class="action-icons">';
+                html += '<i>👍 ' + likes + '</i>';
+                html += '<i>💬 ' + replies + '</i>';
+                html += '</span></div></div>';
+            });
+            list.innerHTML = html;
+        })();
+        // ======================= 评论发布按钮交互 =======================
+        (function() {
+            var btn = document.querySelector('.comment-submit');
+            if (btn) {
+                btn.addEventListener('click', function() {
+                    var input = document.querySelector('.comment-form-card input');
+                    var textarea = document.querySelector('.comment-form-card textarea');
+                    var name = input.value.trim() || '匿名漫友';
+                    var text = textarea.value.trim();
+                    if (!text) { alert('请先输入留言内容'); return; }
+                    var list = document.getElementById('commentList');
+                    var now = new Date();
+                    var pad = function(n) { return n < 10 ? '0' + n : n; };
+                    var timeStr = now.getFullYear() + '-' + pad(now.getMonth() + 1) + '-' + pad(now.getDate()) +
+                        ' ' + pad(now.getHours()) + ':' + pad(now.getMinutes());
+                    var html = '<div class="comment-item">';
+                    html += '<div class="comment-user-row">';
+                    html += '<div class="comment-user-info">';
+                    html += '<div class="comment-avatar">' + name.charAt(0) + '</div>';
+                    html += '<span class="comment-nickname">' + name + '</span>';
+                    html += '</div>';
+                    html += '<span class="comment-date">' + timeStr + '</span>';
+                    html += '</div>';
+                    html += '<span class="comment-tag">#新留言</span>';
+                    html += '<p class="comment-text">' + text + '</p>';
+                    html += '<div class="comment-actions">';
+                    html += '<button class="reply-btn">↩ 回复</button>';
+                    html += '<span class="action-icons">';
+                    html += '<i>👍 0</i>';
+                    html += '<i>💬 0</i>';
+                    html += '</span></div></div>';
+                    list.insertAdjacentHTML('afterbegin', html);
+                    input.value = '';
+                    textarea.value = '';
+                });
+            }
+        })();
+    </script>
+</body>
+</html>
